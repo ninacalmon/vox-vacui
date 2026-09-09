@@ -167,6 +167,8 @@ Two buses (from `default_bus_layout.tres`): **"Sound Effects"** (`SFXManager` on
 
 `move_up/down/left/right` (WASD + joy axes), `break_stop` (Alt + axis 4), `impulse_burst` (Shift + axis 5 + button 9), `restart` (R, Space), `confirm` (Space, button 0), `teleport` (T, button 3), `pause` (Escape, button 6), `menu` (M, Space), `destroy` (Space), `left_click`/`return` (mouse 1, X), `scroll_up/down`, `middle_mouse`, `test_i/j/k/l/n` (debug), `r_stk_up/down/left/right` (joypad right stick).
 
+> **Input preference (MCP automation):** prefer **keyboard inputs** (e.g. `input_key` / `input_action` / `input_sequence`) over mouse inputs when driving the game — navigating menus *and* gameplay alike. Keyboard/action-based input is focus-independent, works on a backgrounded window, and does not depend on cursor/button geometry (which is easy to get wrong via `input_mouse`, since events may land at a stale cursor position). Fall back to mouse only when the target has no keyboard binding.
+
 ---
 
 ## Code style & LLM modification rules (IMPORTANT)
