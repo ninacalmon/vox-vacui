@@ -11,7 +11,7 @@ func _connect_signals():
 
 func _on_clicked():
 	if StatsManager.day != 3:
-		HandsEventBus.door_interaction.emit()
+		HandsEventBus.not_yet.emit()
 		PopUpSystem.show_text("Não está na hora ainda.")
 		shake_module.shake(self, 0.2, 0.6)
 	else:

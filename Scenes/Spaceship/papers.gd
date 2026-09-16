@@ -17,7 +17,7 @@ func _on_resource_count_finished():
 
 func _on_clicked():
 	if not has_energy or StatsManager.day == 3:
-		HandsEventBus.door_interaction.emit()
+		HandsEventBus.not_yet.emit()
 		if StatsManager.day != 3:
 			PopUpSystem.show_text("Está muito escuro.")
 		return

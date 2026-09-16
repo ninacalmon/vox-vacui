@@ -29,7 +29,7 @@ func _connect_signals():
 
 func _on_clicked():
 	if StatsManager.day == 3:
-		HandsEventBus.door_interaction.emit()
+		HandsEventBus.not_yet.emit()
 		#PopUpSystem.show_text("Não.")
 		return
 	if not is_focused and clickable_highlight.is_mouse_over_area:
