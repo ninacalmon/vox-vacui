@@ -12,7 +12,7 @@ shader = ExtResource("2_x5vf2")
 shader_parameter/rounded = true
 shader_parameter/alpha_threshold = 0.1
 
-[node name="Door" type="Area2D" node_paths=PackedStringArray("clickable_highlight")]
+[node name="DoorClosed" type="Area2D" node_paths=PackedStringArray("clickable_highlight")]
 script = ExtResource("1_gx1va")
 clickable_highlight = NodePath("ClickableHighlight")
 metadata/_custom_type_script = "uid://cj0pm0s1qx8my"

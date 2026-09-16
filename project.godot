@@ -32,10 +32,10 @@ DiaryDatabase="*res://autoloads/diary_database.gd"
 HandsEventBus="*res://autoloads/hands_event_bus.gd"
 MusicManager="*res://autoloads/music_manager.tscn"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [display]
 
-window/size/mode=4
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://cmlx2ppg3l6lj"
 
@@ -45,7 +45,7 @@ project/assembly_name="rogue-space"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg", "res://addons/godot_ai/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg", "res://addons/godot_ai/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [gdunit4]
 
