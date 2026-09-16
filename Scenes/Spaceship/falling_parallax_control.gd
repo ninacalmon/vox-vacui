@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	SpaceshipEventBus.resource_count_started.connect(start_animation)
+	hide()
 
 func start_animation(duration):
 	show()
@@ -11,3 +12,7 @@ func start_animation(duration):
 		falling_animation.play("Medium")
 	else:
 		falling_animation.play("Maximum")
+
+	await falling_animation.animation_finished
+
+	hide()

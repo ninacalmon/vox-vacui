@@ -6,8 +6,12 @@ enum States {IDLE, WAITING, ACTING}
 
 var action_exc: ActionExecutor
 var pcam: PhantomCamera2D
+## default priority for ACTIVE Interactable PCams is 1000.
+## for DISABLED ones are 0.
+## for ACTIVE Action Executor PCams is 2000 as they need to override Interactable's.
 
 var main_spr: Sprite2D
+var times_used: int
 
 var current_state: States:
 	set(value):
@@ -21,10 +25,10 @@ func _ready() -> void:
 			pcam = child
 		elif child is ActionExecutor:
 			action_exc = child
-		elif child is Sprite2D:
-			main_spr = child
 
 	current_state = States.IDLE
+
+	action_exc.was_freed.connect(_on_action_exec_freed)
 
 
 func change_state(new_state: States):
@@ -34,11 +38,11 @@ func change_state(new_state: States):
 		States.WAITING:
 			highlight(true)
 		States.ACTING:
-			pass
+			highlight(false)
 
 
 func _input(event: InputEvent) -> void:
-	if not current_state == States.WAITING:
+	if event is InputEventMouseMotion:
 		return
 
 	if (event.is_action_pressed("confirm")
@@ -50,16 +54,22 @@ func _input(event: InputEvent) -> void:
 				PopUpSystem.show_text(action_exc.energy_message)
 			return
 
-		current_state = States.ACTING
-		action_exc.start()
 
+		action_exc.start()
+		current_state = States.ACTING
+	
 	if (event.is_action_pressed("return")
-	and current_state == States.WAITING
+	and current_state == States.ACTING
 	and action_exc.current_state == action_exc.States.FREE):
 
 		action_exc.finish()
+		current_state = States.WAITING
 
 
 func highlight(_bool: bool):
-	main_spr.set_instance_shader_parameter("enabled", _bool)
-	print("rodei ", self, _bool)
+	action_exc.main_spr.set_instance_shader_parameter("enabled", _bool)
+
+
+func _on_action_exec_freed():
+	action_exc.finish()
+	current_state = States.WAITING
