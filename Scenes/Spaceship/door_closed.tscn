@@ -1,21 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://djdhgyun4m2fy"]
+[gd_scene load_steps=10 format=3 uid="uid://djdhgyun4m2fy"]
 
 [ext_resource type="Script" uid="uid://cjo186wx81yoa" path="res://scenes/spaceship/door_closed.gd" id="1_gx1va"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="2_x5vf2"]
 [ext_resource type="Texture2D" uid="uid://2njdt1dx0y8n" path="res://sprites/spaceship_interior/SpaceshipDoor.png" id="3_rnpjw"]
-[ext_resource type="Script" uid="uid://jtbq6dor8pk0" path="res://scenes/modulars/clickable_highlight.gd" id="4_oc366"]
 [ext_resource type="AudioStream" uid="uid://bjpdfvmmyk2k1" path="res://sound_effects/spaceship/SFX_dooropen.wav" id="5_lnxwh"]
 [ext_resource type="Script" uid="uid://c4rjuhxn0t5h3" path="res://scenes/spaceship/shake_module.gd" id="6_x5vf2"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="7_svghs"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_ex47h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofsvt"]
 shader = ExtResource("2_x5vf2")
 shader_parameter/rounded = true
 shader_parameter/alpha_threshold = 0.1
 
-[node name="DoorClosed" type="Area2D" node_paths=PackedStringArray("clickable_highlight")]
+[sub_resource type="Resource" id="Resource_qw8jy"]
+script = ExtResource("8_ex47h")
+
+[node name="DoorClosed" type="Node2D" node_paths=PackedStringArray("main_spr", "pcam")]
 script = ExtResource("1_gx1va")
-clickable_highlight = NodePath("ClickableHighlight")
-metadata/_custom_type_script = "uid://cj0pm0s1qx8my"
+main_spr = NodePath("Sprite2D")
+pcam = NodePath("NOTUSEDPhantomCamera2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ofsvt")
@@ -25,12 +29,6 @@ instance_shader_parameters/outline_width = 12
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_rnpjw")
 
-[node name="ClickableHighlight" type="Node2D" parent="." node_paths=PackedStringArray("area", "sprite")]
-script = ExtResource("4_oc366")
-area = NodePath("..")
-sprite = NodePath("../Sprite2D")
-metadata/_custom_type_script = "uid://jtbq6dor8pk0"
-
 [node name="DoorSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_lnxwh")
 volume_db = -6.0
@@ -39,3 +37,8 @@ bus = &"Sound Effects"
 [node name="ShakeModule" type="Node" parent="."]
 script = ExtResource("6_x5vf2")
 metadata/_custom_type_script = "uid://c4rjuhxn0t5h3"
+
+[node name="NOTUSEDPhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("7_svghs")
+tween_resource = SubResource("Resource_qw8jy")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"

@@ -37,6 +37,7 @@ func change_state(new_state: States):
 			highlight(false)
 		States.WAITING:
 			highlight(true)
+			print(self, " is WAITING; hightligh is: ", action_exc.main_spr.get_instance_shader_parameter("enabled"))
 		States.ACTING:
 			highlight(false)
 
@@ -55,8 +56,8 @@ func _input(event: InputEvent) -> void:
 			return
 
 
-		action_exc.start()
 		current_state = States.ACTING
+		action_exc.start()
 	
 	if (event.is_action_pressed("return")
 	and current_state == States.ACTING

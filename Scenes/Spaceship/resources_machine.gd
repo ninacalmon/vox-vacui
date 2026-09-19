@@ -47,9 +47,12 @@ func _input(event: InputEvent) -> void:
 		message = "Já foi usado hoje."
 		current_state = States.BLOCKED
 		SpaceshipEventBus.resource_count_started.emit(resource_counter.calculate_duration())
+
 		await count_resources()
+
 		SpaceshipEventBus.resource_count_finished.emit()
 		Globals.spaceship_energy = true
+
 		current_state = States.FREE
 		was_freed.emit()
 

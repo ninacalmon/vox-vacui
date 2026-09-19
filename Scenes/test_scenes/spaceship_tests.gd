@@ -67,8 +67,8 @@ extends Node2D
 	4 - Ajustar cada um dos objetos para funcionar com o sistema novo:
 		4.1 - ResourcesMachine - FEITO
 		4.2 - Monitor - FEITO
-		4.3 - Porta saída
-		4.4 - Porta entrada
+		4.3 - Porta saída - EM ANDAMENTO
+		4.4 - Porta trancada - FEITO
 		4.5 - Diário
 		4.6 - Papéis
 	5 - UI
