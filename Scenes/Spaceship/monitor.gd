@@ -32,8 +32,6 @@ func finish():
 
 
 func _ready() -> void:
-	Globals.spaceship_energy = true
-
 	add_to_group("PU_State_Listeners")
 	SpaceshipEventBus.resource_count_finished.connect(_on_resource_count_finished)
 

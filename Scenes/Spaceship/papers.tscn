@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://brt0pxwj3kby8"]
+[gd_scene load_steps=8 format=3 uid="uid://brt0pxwj3kby8"]
 
 [ext_resource type="Script" uid="uid://bfwmx6kye5ry4" path="res://scenes/spaceship/papers.gd" id="1_evdcp"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="1_ey36f"]
 [ext_resource type="Texture2D" uid="uid://c37dul0guky5m" path="res://sprites/spaceship_interior/SpaceshipPapersV2.png" id="3_evdcp"]
-[ext_resource type="Script" uid="uid://jtbq6dor8pk0" path="res://scenes/modulars/clickable_highlight.gd" id="3_wwfu1"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_t2px0"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_fqxam"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_evdcp"]
 shader = ExtResource("1_ey36f")
 shader_parameter/rounded = true
 shader_parameter/alpha_threshold = 0.505
 
-[node name="Papers" type="Area2D" node_paths=PackedStringArray("clickable_highlight")]
-script = ExtResource("1_evdcp")
-zoom_in_amount = 4.0
-zoom_offset = Vector2(0, 10)
-clickable_highlight = NodePath("ClickableHighlight")
+[sub_resource type="Resource" id="Resource_fomai"]
+script = ExtResource("5_fqxam")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-91, 109, 86, 114, 101, -97, -73, -102, -107, 38)
+[node name="Papers" type="Node2D" node_paths=PackedStringArray("main_spr", "pcam")]
+script = ExtResource("1_evdcp")
+main_spr = NodePath("Sprite2D")
+pcam = NodePath("PhantomCamera2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_evdcp")
@@ -26,8 +26,9 @@ position = Vector2(-1.9999999, 3.9999995)
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("3_evdcp")
 
-[node name="ClickableHighlight" type="Node2D" parent="." node_paths=PackedStringArray("area", "sprite")]
-script = ExtResource("3_wwfu1")
-area = NodePath("..")
-sprite = NodePath("../Sprite2D")
-metadata/_custom_type_script = "uid://jtbq6dor8pk0"
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(-3, 28)
+script = ExtResource("4_t2px0")
+zoom = Vector2(3.55, 3.55)
+tween_resource = SubResource("Resource_fomai")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"

@@ -1,6 +1,7 @@
 class_name InteractionManager
 extends Node
 
+@export_range(0, 6, 1.0) var starting_idx: int = 1
 
 var inter_array: Array[Interactable]
 var current_inter: Interactable
@@ -11,7 +12,7 @@ func _ready() -> void:
 		if child is Interactable:
 			inter_array.append(child)
 
-	enable_inter(0)
+	enable_inter(starting_idx)
 
 
 func _input(event: InputEvent) -> void:
