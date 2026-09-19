@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://htap6wmpylrw"]
 
-[ext_resource type="Script" uid="uid://bvi2pvbxydcko" path="res://scenes/spaceship/door.gd" id="1_htx6n"]
+[ext_resource type="Script" uid="uid://bvi2pvbxydcko" path="res://scenes/spaceship/interactable_objects/exit_door/exit_door.gd" id="1_htx6n"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="2_v60d0"]
 [ext_resource type="Texture2D" uid="uid://c11sdpki3rb42" path="res://sprites/spaceship_interior/SpaceshipExitDoor.png" id="3_ofsvt"]
 [ext_resource type="Texture2D" uid="uid://beinhniahsmx2" path="res://sprites/ui/circle3-export.png" id="5_lq1rf"]

@@ -39,7 +39,7 @@ const PLAYER_MAX_VELOCITY: float = 1000.0
 const PLAYER_MAX_TURN: float = 0.01
 
 #endregion
-var day: int = 0
+var day: int = 2
 
 #### RESOURCES BANK ####
 var resources_needed: int = 50

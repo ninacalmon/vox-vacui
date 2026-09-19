@@ -1,7 +1,6 @@
 class_name Diary
-extends MainArea
+extends ActionExecutor
 
-var has_energy: bool = false
 
 @onready var sprite_mini_book: Sprite2D = $SpriteMiniBook
 
@@ -15,10 +14,29 @@ var has_energy: bool = false
 
 @onready var blur_rect: ColorRect = $BookCanvasLayer/BlurRect
 
+
+func start():
+	current_state = States.BLOCKED
+
+	await _take_book()
+	diary_control.is_open = true
+
+	current_state = States.FREE
+
+
+func finish():
+	current_state = States.FREE
+
+	diary_control.is_open = false
+	await _close_book()
+
+
+
 func _ready() -> void:
-	#has_energy = true
-	_connect_signals()
-	_initialize_ui()
+	blur_rect.hide()
+	diary_control.hide()
+	sprite_open.hide()
+
 
 func slow_color_change(
 	subject: Node, duration: float = 0.5, final_modulate: Color = Color(1, 1, 1, 0)
@@ -27,34 +45,25 @@ func slow_color_change(
 	tween.tween_property(subject, "modulate", final_modulate, duration)
 	await tween.finished
 
-func _connect_signals():
-	clickable_highlight.was_clicked.connect(_on_clicked)
-	SpaceshipEventBus.focus_changed.connect(_on_focus_changed)
-	SpaceshipEventBus.resource_count_finished.connect(_on_resource_count_finished)
 
-func _initialize_ui():
-	blur_rect.hide()
-	diary_control.hide()
-	sprite_open.hide()
 
 # Animations vvvvvvvvvvvv
 func _take_book():
 	animation_take_book.play("take_book")
 	await get_tree().create_timer(animation_take_book.current_animation_length * 0.9).timeout
 	HandsEventBus.book.emit(true)
-	_open_book()
+	await _open_book()
+
 
 func _open_book():
 	diary_control.open_diary()
 	_show_blur()
 	await _play_open_animation()
 	_show_book_ui()
-	can_exit = true
+
+
 
 func _close_book():
-	if not is_focused:
-		return
-
 	await _hide_book_ui()
 	await _play_close_animation()
 	HandsEventBus.book.emit(false)
@@ -64,6 +73,7 @@ func _close_book():
 
 func _return_book():
 	animation_take_book.play_backwards("take_book")
+	await animation_take_book.animation_finished
 
 # Visual Steps vvvvvvvv
 func _show_blur():
@@ -94,27 +104,3 @@ func _hide_book_ui():
 	slow_color_change(diary_control, 0.2)
 	await get_tree().create_timer(0.2).timeout
 	diary_control.hide()
-
-func _on_resource_count_finished():
-	has_energy = true
-
-func _on_clicked():
-	if not has_energy or StatsManager.day == 3:
-		HandsEventBus.not_yet.emit()
-		if StatsManager.day != 3:
-			PopUpSystem.show_text("Está muito escuro.")
-		return
-
-	if not is_focused and clickable_highlight.is_mouse_over_area:
-		SpaceshipEventBus.focus_on.emit(zoom_in_amount, zoom_offset, self, true)
-
-func _on_focus_changed(focus: bool, subject: Node2D):
-	if focus and subject == self:
-		is_focused = true
-		can_exit = false
-		_take_book()
-	else:
-		clickable_highlight.is_mouse_over_area = false
-		clickable_highlight.active = true
-		_close_book()
-		is_focused = false

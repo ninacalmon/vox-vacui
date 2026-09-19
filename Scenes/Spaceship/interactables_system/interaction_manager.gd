@@ -7,12 +7,16 @@ var inter_array: Array[Interactable]
 var current_inter: Interactable
 var current_inter_idx: int
 
+
 func _ready() -> void:
 	for child in get_children():
 		if child is Interactable:
 			inter_array.append(child)
 
 	enable_inter(starting_idx)
+
+	SpaceshipEventBus.snap_ui_left.connect(_on_snap_ui_left)
+	SpaceshipEventBus.snap_ui_right.connect(_on_snap_ui_right)
 
 
 func _input(event: InputEvent) -> void:
@@ -54,3 +58,19 @@ func disable_inter(idx: int):
 
 	inter.pcam.set_priority(0)
 	inter.current_state = inter.States.IDLE
+
+
+func _on_snap_ui_left():
+	if not current_inter.current_state == current_inter.States.WAITING:
+		return
+	
+	if is_change_possible(current_inter_idx -1):
+		change_inter_to(current_inter_idx -1)
+
+
+func _on_snap_ui_right():
+	if not current_inter.current_state == current_inter.States.WAITING:
+		return
+	
+	if is_change_possible(current_inter_idx +1):
+		change_inter_to(current_inter_idx +1)

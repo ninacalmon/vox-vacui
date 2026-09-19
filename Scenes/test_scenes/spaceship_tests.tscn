@@ -1,95 +1,112 @@
-[gd_scene load_steps=15 format=3 uid="uid://clcug6p51l2er"]
+[gd_scene load_steps=20 format=3 uid="uid://clcug6p51l2er"]
 
-[ext_resource type="Script" uid="uid://c0f4awlsn252c" path="res://scenes/test_scenes/spaceship_tests.gd" id="1_i4xoc"]
+[ext_resource type="Script" uid="uid://c0f4awlsn252c" path="res://scenes/test_scenes/spaceship_tests.gd" id="1_th8ro"]
 [ext_resource type="Texture2D" uid="uid://de57pwcmxnpsx" path="res://sprites/spaceship_interior/SpaceshipBackgroundSemiFinalVer.png" id="2_w8m7j"]
-[ext_resource type="Script" uid="uid://d6shl6mm32n" path="res://scenes/test_scenes/interaction_manager.gd" id="5_7jqge"]
+[ext_resource type="Script" uid="uid://d6shl6mm32n" path="res://scenes/spaceship/interactables_system/interaction_manager.gd" id="3_fxdtr"]
+[ext_resource type="Script" uid="uid://i6flb1lywrd5" path="res://scenes/spaceship/interactables_system/interactable.gd" id="4_kbbj1"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_jptkv"]
-[ext_resource type="PackedScene" uid="uid://htap6wmpylrw" path="res://scenes/spaceship/door.tscn" id="7_6i4qk"]
-[ext_resource type="Script" uid="uid://i6flb1lywrd5" path="res://scenes/test_scenes/interactable.gd" id="7_7jqge"]
-[ext_resource type="PackedScene" uid="uid://ck6swxjky54l3" path="res://scenes/spaceship/resources_machine.tscn" id="7_dhsi0"]
-[ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/monitor.tscn" id="8_jptkv"]
-[ext_resource type="PackedScene" uid="uid://djdhgyun4m2fy" path="res://scenes/spaceship/door_closed.tscn" id="9_6i4qk"]
+[ext_resource type="PackedScene" uid="uid://htap6wmpylrw" path="res://scenes/spaceship/interactable_objects/exit_door/exit_door.tscn" id="7_6i4qk"]
+[ext_resource type="PackedScene" uid="uid://ck6swxjky54l3" path="res://scenes/spaceship/interactable_objects/resources_machine/resources_machine.tscn" id="7_dhsi0"]
+[ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/interactable_objects/monitor/monitor.tscn" id="8_jptkv"]
+[ext_resource type="PackedScene" uid="uid://djdhgyun4m2fy" path="res://scenes/spaceship/interactable_objects/closed_door/closed_door.tscn" id="9_6i4qk"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_m8yek"]
 [ext_resource type="PackedScene" uid="uid://dckqqes7uw3fy" path="res://scenes/spaceship/deimos_hands.tscn" id="9_nc3jv"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_6i4qk"]
-[ext_resource type="PackedScene" uid="uid://brt0pxwj3kby8" path="res://scenes/spaceship/papers.tscn" id="11_jtif7"]
+[ext_resource type="PackedScene" uid="uid://brt0pxwj3kby8" path="res://scenes/spaceship/interactable_objects/papers/papers.tscn" id="11_jtif7"]
+[ext_resource type="PackedScene" uid="uid://bvmqc5jgquxeu" path="res://scenes/spaceship/interactable_objects/diary/diary.tscn" id="12_2q7e0"]
+[ext_resource type="PackedScene" uid="uid://coahuft63xqca" path="res://scenes/spaceship/ui/ui_spaceship.tscn" id="15_th8ro"]
+[ext_resource type="Script" uid="uid://bfxmcgyxsyte2" path="res://scenes/ui/pause_overlay.gd" id="16_fxdtr"]
+[ext_resource type="Script" uid="uid://c4xr3keunlmlg" path="res://scenes/ui/settings/settings.gd" id="17_kbbj1"]
+[ext_resource type="PackedScene" uid="uid://c2ijay0wls6go" path="res://scenes/ui/settings/settings_container.tscn" id="18_6fr6v"]
 
 [sub_resource type="Resource" id="Resource_m8yek"]
 script = ExtResource("10_6i4qk")
 
 [node name="SpaceshipTests" type="Node2D"]
-script = ExtResource("1_i4xoc")
+script = ExtResource("1_th8ro")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(13.000001, -19.000013)
 scale = Vector2(0.6347222, 0.6253333)
 texture = ExtResource("2_w8m7j")
 
-[node name="InteractionManager" type="Node" parent="."]
-script = ExtResource("5_7jqge")
+[node name="InteractionManager" type="Node" parent="." groups=["Interaction_Manager"]]
+script = ExtResource("3_fxdtr")
 
-[node name="Interactable4" type="Node2D" parent="InteractionManager"]
+[node name="ExitDoorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-1335, 66)
-script = ExtResource("7_7jqge")
+script = ExtResource("4_kbbj1")
 
-[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable4"]
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ExitDoorInteractable"]
 position = Vector2(0, -2)
 script = ExtResource("9_m8yek")
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Door" parent="InteractionManager/Interactable4" instance=ExtResource("7_6i4qk")]
+[node name="Door" parent="InteractionManager/ExitDoorInteractable" instance=ExtResource("7_6i4qk")]
 
-[node name="Interactable" type="Node2D" parent="InteractionManager"]
+[node name="ResourcesMachineInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-972, 0)
-script = ExtResource("7_7jqge")
+script = ExtResource("4_kbbj1")
 requires_energy = false
 
-[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable"]
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ResourcesMachineInteractable"]
 position = Vector2(308, 0)
 script = ExtResource("9_m8yek")
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="ResourcesMachine" parent="InteractionManager/Interactable" instance=ExtResource("7_dhsi0")]
+[node name="ResourcesMachine" parent="InteractionManager/ResourcesMachineInteractable" instance=ExtResource("7_dhsi0")]
 position = Vector2(242, -163)
 
-[node name="Interactable2" type="Node2D" parent="InteractionManager"]
+[node name="MonitorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-34, -29)
-script = ExtResource("7_7jqge")
+script = ExtResource("4_kbbj1")
 
-[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable2"]
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/MonitorInteractable"]
 position = Vector2(0, -2)
 script = ExtResource("9_m8yek")
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Monitor" parent="InteractionManager/Interactable2" instance=ExtResource("8_jptkv")]
+[node name="Monitor" parent="InteractionManager/MonitorInteractable" instance=ExtResource("8_jptkv")]
 
-[node name="Interactable3" type="Node2D" parent="InteractionManager"]
+[node name="DiaryInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(303, 108)
+script = ExtResource("4_kbbj1")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/DiaryInteractable"]
+position = Vector2(0, -2)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Diary" parent="InteractionManager/DiaryInteractable" instance=ExtResource("12_2q7e0")]
+
+[node name="LockedDoorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(946, -60)
-script = ExtResource("7_7jqge")
+script = ExtResource("4_kbbj1")
 requires_energy = false
 
-[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable3"]
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/LockedDoorInteractable"]
 position = Vector2(0, -2)
 script = ExtResource("9_m8yek")
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="DoorClosed" parent="InteractionManager/Interactable3" instance=ExtResource("9_6i4qk")]
+[node name="DoorClosed" parent="InteractionManager/LockedDoorInteractable" instance=ExtResource("9_6i4qk")]
 
-[node name="Interactable5" type="Node2D" parent="InteractionManager"]
+[node name="PapersInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(1333, -61)
-script = ExtResource("7_7jqge")
+script = ExtResource("4_kbbj1")
 
-[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable5"]
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/PapersInteractable"]
 position = Vector2(0, -2)
 script = ExtResource("9_m8yek")
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Papers" parent="InteractionManager/Interactable5" instance=ExtResource("11_jtif7")]
+[node name="Papers" parent="InteractionManager/PapersInteractable" instance=ExtResource("11_jtif7")]
 energy_message = "Está muito escuro."
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -106,3 +123,107 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="DeimosHand" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_nc3jv")]
 z_index = 2
 camera = NodePath("../Camera2D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("15_th8ro")]
+scale = Vector2(1.0005939, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseOverlay" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("pause_color_rect", "continue_button", "exit_button")]
+process_mode = 3
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("16_fxdtr")
+pause_color_rect = NodePath("PauseColorRect")
+continue_button = NodePath("PauseColorRect/PauseControlRect/VBoxContainer/ContinueButton")
+exit_button = NodePath("PauseColorRect/PauseControlRect/VBoxContainer/ExitButton")
+metadata/_edit_lock_ = true
+
+[node name="PauseColorRect" type="ColorRect" parent="CanvasLayer/PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.77254903)
+
+[node name="PauseControlRect" type="Control" parent="CanvasLayer/PauseOverlay/PauseColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = 47.0
+offset_right = -49.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseLabel" type="RichTextLabel" parent="CanvasLayer/PauseOverlay/PauseColorRect/PauseControlRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_right = 149.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "PAUSADO"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseOverlay/PauseColorRect/PauseControlRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -198.0
+offset_top = -242.0
+offset_right = 198.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 22
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/PauseOverlay/PauseColorRect/PauseControlRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Continuar"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/PauseOverlay/PauseColorRect/PauseControlRect/VBoxContainer" node_paths=PackedStringArray("inverse_visibility_nodes")]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Configurações"
+script = ExtResource("17_kbbj1")
+inverse_visibility_nodes = [NodePath("..")]
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/PauseOverlay/PauseColorRect/PauseControlRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Retornar ao menu"
+autowrap_mode = 2
+
+[node name="SettingsContainer" parent="CanvasLayer/PauseOverlay/PauseColorRect/PauseControlRect" node_paths=PackedStringArray("inverse_visibility_nodes") instance=ExtResource("18_6fr6v")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+inverse_visibility_nodes = [NodePath("../VBoxContainer")]

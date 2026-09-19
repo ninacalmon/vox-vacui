@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://djdhgyun4m2fy"]
 
-[ext_resource type="Script" uid="uid://cjo186wx81yoa" path="res://scenes/spaceship/door_closed.gd" id="1_gx1va"]
+[ext_resource type="Script" uid="uid://cjo186wx81yoa" path="res://scenes/spaceship/interactable_objects/closed_door/closed_door.gd" id="1_gx1va"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="2_x5vf2"]
 [ext_resource type="Texture2D" uid="uid://2njdt1dx0y8n" path="res://sprites/spaceship_interior/SpaceshipDoor.png" id="3_rnpjw"]
 [ext_resource type="AudioStream" uid="uid://bjpdfvmmyk2k1" path="res://sound_effects/spaceship/SFX_dooropen.wav" id="5_lnxwh"]

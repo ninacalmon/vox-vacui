@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bkjjj01xixl1j"]
 
-[ext_resource type="Script" uid="uid://f7hym6rcrxkn" path="res://scenes/spaceship/monitor.gd" id="1_s3qmo"]
+[ext_resource type="Script" uid="uid://f7hym6rcrxkn" path="res://scenes/spaceship/interactable_objects/monitor/monitor.gd" id="1_s3qmo"]
 [ext_resource type="Texture2D" uid="uid://b5oolandwoj16" path="res://sprites/spaceship_interior/SpaceshipMonitorScreen.png" id="2_5toxe"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="2_41fxr"]
 [ext_resource type="Texture2D" uid="uid://catulgld40fhk" path="res://sprites/spaceship_interior/deimos_face/SpaceshipMonitorDeimos2.png" id="3_i22b5"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bix6waaoato1m" path="res://sprites/spaceship_interior/deimos_face/SpaceshipMonitorDeimospiscandolentinho.png" id="4_se3rt"]
 [ext_resource type="Texture2D" uid="uid://dxqnkfbe4hw57" path="res://sprites/spaceship_interior/deimos_face/SpaceshipMonitorDeimospiscandolentinho2.png" id="5_4mndj"]
 [ext_resource type="Script" uid="uid://ce4k3gvavwn0b" path="res://scenes/ui/power_ups_ui.gd" id="6_s3qmo"]
-[ext_resource type="Script" uid="uid://b3h7nqvel71fy" path="res://scenes/spaceship/sprite_face.gd" id="6_se3rt"]
+[ext_resource type="Script" uid="uid://b3h7nqvel71fy" path="res://scenes/spaceship/interactable_objects/monitor/sprite_face.gd" id="6_se3rt"]
 [ext_resource type="Texture2D" uid="uid://bgc2a51wevbrs" path="res://sprites/spaceship_interior/SpaceshipMonitorButton.png" id="7_acnb0"]
 [ext_resource type="PackedScene" uid="uid://fjxp66w0rpvl" path="res://scenes/ui/PowerUpSetup.tscn" id="7_t6xb0"]
 [ext_resource type="AudioStream" uid="uid://cuyalodvbr04t" path="res://sound_effects/ui/SFX_buttonswitch.wav" id="10_3okkr"]

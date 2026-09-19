@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qwqle3odi0wk"]
 
 [ext_resource type="FontFile" uid="uid://cwut5ptwefh1" path="res://fonts/PearSoda.ttf" id="1_6r7jf"]
-[ext_resource type="Script" uid="uid://beckbjuxehb28" path="res://scenes/spaceship/diary_page.gd" id="1_u5lp5"]
+[ext_resource type="Script" uid="uid://beckbjuxehb28" path="res://scenes/spaceship/interactable_objects/diary/diary_page.gd" id="1_u5lp5"]
 [ext_resource type="Texture2D" uid="uid://b1idceig4yflc" path="res://sprites/spaceship_interior/drawingTest.png" id="2_u5lp5"]
 
 [node name="Page" type="VBoxContainer"]

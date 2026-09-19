@@ -64,14 +64,14 @@ extends Node2D
 	1 - Desenvolvimento da classe 'Interactable'- FEITO
 	2 - Desenvolvimento InteractableManager - FEITO
 	3 - Câmeras - EM ANDAMENTO
-	4 - Ajustar cada um dos objetos para funcionar com o sistema novo:
+	4 - Ajustar cada um dos objetos para funcionar com o sistema novo: - FEITO
 		4.1 - ResourcesMachine - FEITO
 		4.2 - Monitor - FEITO
 		4.3 - Porta saída - FEITO
 		4.4 - Porta trancada - FEITO
-		4.5 - Diário - EM ANDAMENTO
+		4.5 - Diário - FEITO
 		4.6 - Papéis - FEITO
-	5 - UI
+	5 - UI - FEITO
 	6 - Organizar pastas
 	7 - Implementar na cena real
 	8 - Ajustar mãos

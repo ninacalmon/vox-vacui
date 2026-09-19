@@ -1,16 +1,15 @@
-[gd_scene load_steps=45 format=3 uid="uid://bvmqc5jgquxeu"]
+[gd_scene load_steps=47 format=3 uid="uid://bvmqc5jgquxeu"]
 
 [ext_resource type="Texture2D" uid="uid://cyrvbfkrobaa1" path="res://sprites/bookTileset.png" id="1_7yh6m"]
-[ext_resource type="Script" uid="uid://4dv3d2vyvbp1" path="res://scenes/spaceship/diary.gd" id="1_mlqjd"]
+[ext_resource type="Script" uid="uid://4dv3d2vyvbp1" path="res://scenes/spaceship/interactable_objects/diary/diary.gd" id="1_mlqjd"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="2_7afck"]
 [ext_resource type="Texture2D" uid="uid://br5ps5qcruhad" path="res://sprites/spaceship_interior/SpaceshipDeskDiaryShadow.png" id="2_brskc"]
 [ext_resource type="Texture2D" uid="uid://dspm451fbabyx" path="res://sprites/spaceship_interior/SpaceshipDeskDiary.png" id="3_8jwq2"]
-[ext_resource type="Script" uid="uid://jtbq6dor8pk0" path="res://scenes/modulars/clickable_highlight.gd" id="4_wy5ug"]
 [ext_resource type="Shader" uid="uid://kyf6ladmlc1w" path="res://shaders/blur.gdshader" id="5_cr6hc"]
-[ext_resource type="Script" uid="uid://fvfblb6b10sn" path="res://scenes/spaceship/diary_control.gd" id="6_w3sy0"]
-[ext_resource type="PackedScene" uid="uid://qwqle3odi0wk" path="res://scenes/spaceship/diary_page.tscn" id="7_32dq5"]
+[ext_resource type="Script" uid="uid://fvfblb6b10sn" path="res://scenes/spaceship/interactable_objects/diary/diary_control.gd" id="6_w3sy0"]
+[ext_resource type="PackedScene" uid="uid://qwqle3odi0wk" path="res://scenes/spaceship/interactable_objects/diary/diary_page.tscn" id="7_32dq5"]
 [ext_resource type="Texture2D" uid="uid://di2ndivrt2452" path="res://sprites/ui/kenney_input/tile_0823.png" id="8_w3sy0"]
-[ext_resource type="Script" uid="uid://bnhd18fc2a4ua" path="res://scenes/spaceship/hands_diary_overlay.gd" id="10_hmmsy"]
+[ext_resource type="Script" uid="uid://bnhd18fc2a4ua" path="res://scenes/spaceship/interactable_objects/diary/hands_diary_overlay.gd" id="10_hmmsy"]
 [ext_resource type="Shader" uid="uid://bxa51o8hm1602" path="res://shaders/pixel_sprite.gdshader" id="11_8jwq2"]
 [ext_resource type="Texture2D" uid="uid://p1ig5h8l3fu7" path="res://sprites/deimos_hands/moving_pages_book/IMG_4498.PNG" id="11_twokt"]
 [ext_resource type="Texture2D" uid="uid://dkyketm6eerv8" path="res://sprites/deimos_hands/moving_pages_book/IMG_4499.PNG" id="12_8jwq2"]
@@ -24,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://dlyw7eieh3w8t" path="res://sprites/deimos_hands/moving_pages_book/IMG_4507.PNG" id="20_wrdrj"]
 [ext_resource type="Texture2D" uid="uid://c35wmrmrokrqk" path="res://sprites/deimos_hands/moving_pages_book/IMG_4508.PNG" id="21_c5s3n"]
 [ext_resource type="Texture2D" uid="uid://d3m3p58r026te" path="res://sprites/deimos_hands/moving_pages_book/IMG_4509.PNG" id="22_7py28"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="24_ayjpm"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="25_2437p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cr6hc"]
 shader = ExtResource("2_7afck")
@@ -385,14 +386,14 @@ _data = {
 &"prev_hand_show": SubResource("Animation_u66qk")
 }
 
-[node name="Diary" type="Area2D" node_paths=PackedStringArray("clickable_highlight")]
+[sub_resource type="Resource" id="Resource_8ymqw"]
+script = ExtResource("25_2437p")
+
+[node name="Diary" type="Node2D" node_paths=PackedStringArray("main_spr", "pcam")]
 light_mask = 17
 script = ExtResource("1_mlqjd")
-zoom_in_amount = 1.0
-clickable_highlight = NodePath("ClickableHighlight")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-68, -7, -68, 7, -26, 33, 58, 11, 60, -3, 11, -26)
+main_spr = NodePath("SpriteMiniBook")
+pcam = NodePath("NOTUSEDPhantomCamera2D")
 
 [node name="SpriteMiniBook" type="Sprite2D" parent="."]
 light_mask = 513
@@ -412,15 +413,6 @@ libraries = {
 show_behind_parent = true
 scale = Vector2(1.0074954, 0.9925925)
 texture = ExtResource("2_brskc")
-
-[node name="ClickableHighlight" type="Node2D" parent="." node_paths=PackedStringArray("area", "sprite")]
-position = Vector2(0, 200)
-rotation = 1.3962634
-scale = Vector2(0.29999998, 0.29999998)
-script = ExtResource("4_wy5ug")
-area = NodePath("..")
-sprite = NodePath("../SpriteMiniBook")
-metadata/_custom_type_script = "uid://jtbq6dor8pk0"
 
 [node name="BookCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -574,3 +566,8 @@ animation = &"FlippingPagesBookNEXT"
 libraries = {
 &"": SubResource("AnimationLibrary_bxwrm")
 }
+
+[node name="NOTUSEDPhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("24_ayjpm")
+tween_resource = SubResource("Resource_8ymqw")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
