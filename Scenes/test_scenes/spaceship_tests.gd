@@ -72,10 +72,9 @@ extends Node2D
 		4.5 - Diário - FEITO
 		4.6 - Papéis - FEITO
 	5 - UI - FEITO
-	6 - Organizar pastas
-	7 - Implementar na cena real
+	6 - Organizar pastas - FEITO
+	7 - Implementar na cena real - EM ANDAMENTO
 	8 - Ajustar mãos
 	9 - Ajustar InputGuide
-	10 - Testes
-	11 - Ajustes visuais
+	10 - Ajustes visuais
 '''

@@ -1,14 +1,14 @@
-[gd_scene load_steps=50 format=3 uid="uid://c0lfvcrle3frk"]
+[gd_scene load_steps=54 format=3 uid="uid://c0lfvcrle3frk"]
 
 [ext_resource type="Script" uid="uid://dh0io287hog2e" path="res://scenes/levels/spaceship_interior/spaceship_interior.gd" id="1_4wenu"]
 [ext_resource type="PackedScene" uid="uid://cgfq6udrxu5hm" path="res://scenes/ui/mouse.tscn" id="1_ntswj"]
 [ext_resource type="Texture2D" uid="uid://de57pwcmxnpsx" path="res://sprites/spaceship_interior/SpaceshipBackgroundSemiFinalVer.png" id="2_vhqlx"]
 [ext_resource type="Texture2D" uid="uid://crf37jptk3dbk" path="res://sprites/spaceship_interior/SpaceshipTUBOS.png" id="3_76ouu"]
-[ext_resource type="Script" uid="uid://dfov1lobu4khy" path="res://scenes/spaceship/camera_2d.gd" id="3_cfm2w"]
-[ext_resource type="Script" uid="uid://dei8kv4pd3sf0" path="res://scenes/spaceship/TRASHoldsystem/pan_view_module.gd" id="3_nkmj0"]
-[ext_resource type="Script" uid="uid://cpd1q7shcbn7h" path="res://scenes/spaceship/TRASHoldsystem/focus_module.gd" id="4_0gr6q"]
+[ext_resource type="Script" uid="uid://d6shl6mm32n" path="res://scenes/spaceship/interactables_system/interaction_manager.gd" id="3_568vh"]
 [ext_resource type="Shader" uid="uid://bpeqc2oh4cgdj" path="res://shaders/pixelated.gdshader" id="4_76ouu"]
-[ext_resource type="Texture2D" uid="uid://dsyx4jt8a7deg" path="res://sprites/ui/kenney_input/tile_0568.png" id="5_tfcmn"]
+[ext_resource type="Script" uid="uid://i6flb1lywrd5" path="res://scenes/spaceship/interactables_system/interactable.gd" id="4_a6ffb"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_54ay5"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_8b6ar"]
 [ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/interactable_objects/monitor/monitor.tscn" id="7_cfm2w"]
 [ext_resource type="PackedScene" uid="uid://dckqqes7uw3fy" path="res://scenes/spaceship/deimos_hands.tscn" id="7_vo7cp"]
 [ext_resource type="Texture2D" uid="uid://6ivw36hwbai8" path="res://sprites/spaceship_interior/machine/SpaceshipCable.png" id="8_3unc4"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://csvtg0a2joywc" path="res://scenes/spaceship/spaceship_lights.gd" id="12_4wenu"]
 [ext_resource type="PackedScene" uid="uid://htap6wmpylrw" path="res://scenes/spaceship/interactable_objects/exit_door/exit_door.tscn" id="12_i5u5t"]
 [ext_resource type="Script" uid="uid://0cl5r6xdfj6q" path="res://scenes/spaceship/mouse_light.gd" id="12_uafmv"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="13_j7e72"]
 [ext_resource type="AudioStream" uid="uid://btxx18n8epxo" path="res://sound_effects/ambience/sfx_loopnave.wav" id="14_uvk7a"]
 [ext_resource type="Script" uid="uid://dxuxs0f181lv8" path="res://scenes/spaceship/ambient_sfx.gd" id="15_uvk7a"]
 [ext_resource type="PackedScene" uid="uid://djdhgyun4m2fy" path="res://scenes/spaceship/interactable_objects/closed_door/closed_door.tscn" id="15_vhqlx"]
@@ -32,10 +33,11 @@
 [ext_resource type="Script" uid="uid://bfxmcgyxsyte2" path="res://scenes/ui/pause_overlay.gd" id="28_iqcib"]
 [ext_resource type="Script" uid="uid://c4xr3keunlmlg" path="res://scenes/ui/settings/settings.gd" id="29_npxme"]
 [ext_resource type="PackedScene" uid="uid://c2ijay0wls6go" path="res://scenes/ui/settings/settings_container.tscn" id="30_6js7u"]
+[ext_resource type="Script" uid="uid://ioirwmfgd4yu" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_tween_director.gd" id="34_54ay5"]
+[ext_resource type="Script" uid="uid://2au3qse3jc5t" path="res://addons/phantom_camera/scripts/resources/tween_director_resource.gd" id="35_8b6ar"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfm16"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3unc4"]
+[sub_resource type="Resource" id="Resource_qw2ft"]
+script = ExtResource("6_8b6ar")
 
 [sub_resource type="Gradient" id="Gradient_cd6pq"]
 offsets = PackedFloat32Array(0, 0.7007042)
@@ -48,6 +50,27 @@ height = 145
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s2j2j"]
+gradient = SubResource("Gradient_cd6pq")
+width = 159
+height = 74
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqcib"]
+gradient = SubResource("Gradient_cd6pq")
+width = 244
+height = 219
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jx13q"]
+gradient = SubResource("Gradient_cd6pq")
+width = 124
+height = 83
+fill_from = Vector2(0.48563218, 0.055809446)
+fill_to = Vector2(0.5143678, 0.8328486)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5sdax"]
 gradient = SubResource("Gradient_cd6pq")
 width = 210
@@ -59,27 +82,6 @@ fill_from = Vector2(0.5, 0.5)
 gradient = SubResource("Gradient_cd6pq")
 width = 254
 height = 254
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jx13q"]
-gradient = SubResource("Gradient_cd6pq")
-width = 124
-height = 83
-fill_from = Vector2(0.48563218, 0.055809446)
-fill_to = Vector2(0.5143678, 0.8328486)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_s2j2j"]
-gradient = SubResource("Gradient_cd6pq")
-width = 244
-height = 219
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqcib"]
-gradient = SubResource("Gradient_cd6pq")
-width = 244
-height = 219
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -123,10 +125,24 @@ glow_enabled = true
 glow_bloom = 0.88
 glow_hdr_threshold = 0.0
 
+[sub_resource type="Resource" id="Resource_j7e72"]
+script = ExtResource("6_8b6ar")
+duration = 0.5
+transition = 5
+metadata/_custom_type_script = "uid://8umksf8e80fw"
+
+[sub_resource type="Resource" id="Resource_jm836"]
+script = ExtResource("35_8b6ar")
+tween_resource = SubResource("Resource_j7e72")
+from_type = 2
+to_type = 2
+metadata/_custom_type_script = "uid://2au3qse3jc5t"
+
 [node name="SpaceshipInterior" type="Node2D"]
 script = ExtResource("1_4wenu")
 
 [node name="BlackBack" type="ColorRect" parent="."]
+z_index = -1000
 offset_left = -2670.0
 offset_top = -767.0
 offset_right = 2710.0
@@ -136,101 +152,151 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -1000
 position = Vector2(13.000001, -19.000013)
 scale = Vector2(0.6347222, 0.6253333)
 texture = ExtResource("2_vhqlx")
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("pixel_rect")]
+[node name="InteractionManager" type="Node" parent="." groups=["Interaction_Manager"]]
+script = ExtResource("3_568vh")
+starting_idx = 2
+
+[node name="ExitDoorInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(-1335, 66)
+script = ExtResource("4_a6ffb")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ExitDoorInteractable"]
+position = Vector2(129, -8)
+script = ExtResource("5_54ay5")
+zoom = Vector2(0.99, 0.99)
+tween_resource = SubResource("Resource_qw2ft")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Door" parent="InteractionManager/ExitDoorInteractable" instance=ExtResource("12_i5u5t")]
+
+[node name="RedLight" type="PointLight2D" parent="InteractionManager/ExitDoorInteractable"]
+position = Vector2(32, -131)
 scale = Vector2(1.0005939, 1)
-script = ExtResource("3_cfm2w")
-offset_strength_y = 0.35
-pixel_rect = NodePath("../VisualStuff/PixelRect")
-
-[node name="PanViewModule" type="CanvasLayer" parent="Camera2D" node_paths=PackedStringArray("camera")]
-script = ExtResource("3_nkmj0")
-camera = NodePath("..")
-room_width = 1152
-
-[node name="ButtonL" type="Button" parent="Camera2D/PanViewModule"]
-custom_minimum_size = Vector2(72, 648)
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 72.0
-grow_vertical = 2
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jfm16")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3unc4")
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/PanViewModule/ButtonL"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_tfcmn")
-
-[node name="ButtonR" type="Button" parent="Camera2D/PanViewModule"]
-custom_minimum_size = Vector2(72, 648)
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jfm16")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3unc4")
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/PanViewModule/ButtonR"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_tfcmn")
-flip_h = true
-
-[node name="FocusModule" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("camera")]
-script = ExtResource("4_0gr6q")
-camera = NodePath("..")
-
-[node name="Door" parent="." instance=ExtResource("12_i5u5t")]
-position = Vector2(-1341, 28)
-scale = Vector2(1.0005939, 1)
-
-[node name="RedLight" type="PointLight2D" parent="Door"]
-position = Vector2(36.97799, -113)
 color = Color(0.62, 0.17091332, 0.111600004, 1)
 energy = 3.01
 range_item_cull_mask = 512
 texture = SubResource("GradientTexture2D_npxme")
 
-[node name="DoorClosed" parent="." instance=ExtResource("15_vhqlx")]
-position = Vector2(962, -76)
+[node name="ResourcesMachineInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(-935, 134)
+script = ExtResource("4_a6ffb")
+requires_energy = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorClosed"]
-polygon = PackedVector2Array(147, 112, 70, 97, 35, 155, -94, 202, -92, 223, -82, 225, -79, 270, -158, 250, -163, -321, 147, -336)
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ResourcesMachineInteractable"]
+position = Vector2(306, -126)
+script = ExtResource("5_54ay5")
+zoom = Vector2(0.75, 0.75)
+tween_resource = SubResource("Resource_qw2ft")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Papers" parent="." instance=ExtResource("9_cd6pq")]
-position = Vector2(1318, -75)
+[node name="ResourcesMachine" parent="InteractionManager/ResourcesMachineInteractable" instance=ExtResource("10_cfm2w")]
+position = Vector2(242, -163)
 
-[node name="RedLight" type="PointLight2D" parent="Papers"]
-position = Vector2(46, -120)
+[node name="RedLight" type="PointLight2D" parent="InteractionManager/ResourcesMachineInteractable"]
+position = Vector2(313, -205)
+scale = Vector2(1.0005939, 1)
+color = Color(0.62, 0.17091332, 0.111600004, 1)
+energy = 3.0
+range_item_cull_mask = 512
+texture = SubResource("GradientTexture2D_s2j2j")
+
+[node name="RedLight2" type="PointLight2D" parent="InteractionManager/ResourcesMachineInteractable"]
+position = Vector2(318, -206)
+scale = Vector2(1.0005939, 1)
+color = Color(0.62, 0.17091332, 0.111600004, 1)
+texture = SubResource("GradientTexture2D_iqcib")
+
+[node name="MonitorInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(-34, -29)
+script = ExtResource("4_a6ffb")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/MonitorInteractable"]
+script = ExtResource("5_54ay5")
+priority = 1
+zoom = Vector2(0.75, 0.75)
+tween_resource = SubResource("Resource_qw2ft")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Monitor" parent="InteractionManager/MonitorInteractable" instance=ExtResource("7_cfm2w")]
+
+[node name="RedLight" type="PointLight2D" parent="InteractionManager/MonitorInteractable"]
+position = Vector2(-44, 46)
+scale = Vector2(1.0005939, 1)
+color = Color(0.62, 0.17091332, 0.111600004, 1)
+energy = 1.16
+texture = SubResource("GradientTexture2D_s2j2j")
+
+[node name="LockedDoorInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(942, -85)
+script = ExtResource("4_a6ffb")
+requires_energy = false
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/LockedDoorInteractable"]
+position = Vector2(-14, 33)
+script = ExtResource("5_54ay5")
+zoom = Vector2(0.75, 0.75)
+tween_resource = SubResource("Resource_qw2ft")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="DoorClosed" parent="InteractionManager/LockedDoorInteractable" instance=ExtResource("15_vhqlx")]
+z_index = -1
+
+[node name="DiaryInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(1044, 125)
+script = ExtResource("4_a6ffb")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/DiaryInteractable"]
+position = Vector2(4, -41)
+script = ExtResource("5_54ay5")
+zoom = Vector2(1.165, 1.165)
+tween_resource = SubResource("Resource_qw2ft")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Diary" parent="InteractionManager/DiaryInteractable" instance=ExtResource("19_jfm16")]
+
+[node name="RedLight" type="PointLight2D" parent="InteractionManager/DiaryInteractable"]
+position = Vector2(764, 48)
+rotation = -0.2268928
+color = Color(0.62, 0.17091332, 0.111600004, 1)
+energy = 1.66
+range_item_cull_mask = 512
+texture = SubResource("GradientTexture2D_jx13q")
+
+[node name="PapersInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(1333, -61)
+script = ExtResource("4_a6ffb")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/PapersInteractable"]
+position = Vector2(6, 9)
+script = ExtResource("5_54ay5")
+zoom = Vector2(1.185, 1.185)
+tween_resource = SubResource("Resource_qw2ft")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Papers" parent="InteractionManager/PapersInteractable" instance=ExtResource("9_cd6pq")]
+energy_message = "Está muito escuro."
+
+[node name="RedLight" type="PointLight2D" parent="InteractionManager/PapersInteractable"]
+position = Vector2(31, -134)
 color = Color(0.62, 0.17091332, 0.111600004, 1)
 energy = 1.3
 texture = SubResource("GradientTexture2D_5sdax")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+position = Vector2(-34, -29)
+zoom = Vector2(0.75, 0.75)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("13_j7e72")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="SpaceshipDesk" type="Sprite2D" parent="."]
 position = Vector2(1259, 160)
@@ -249,18 +315,6 @@ color = Color(0.62, 0.17091332, 0.111600004, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_cd6pq")
 
-[node name="Diary" parent="." instance=ExtResource("19_jfm16")]
-light_mask = 513
-position = Vector2(1068, 136)
-
-[node name="RedLight" type="PointLight2D" parent="Diary"]
-position = Vector2(-0.9999542, 20)
-rotation = -0.2268928
-color = Color(0.62, 0.17091332, 0.111600004, 1)
-energy = 1.66
-range_item_cull_mask = 512
-texture = SubResource("GradientTexture2D_jx13q")
-
 [node name="SpaceshipCable" type="Sprite2D" parent="."]
 position = Vector2(-237.75055, 125)
 scale = Vector2(1.0005939, 1)
@@ -271,36 +325,10 @@ script = ExtResource("9_xv1p6")
 script = ExtResource("10_vo7cp")
 metadata/_custom_type_script = "uid://c4rjuhxn0t5h3"
 
-[node name="ResourcesMachine" parent="." instance=ExtResource("10_cfm2w")]
-position = Vector2(-658, -53)
-scale = Vector2(1.0005939, 1)
-
-[node name="RedLight" type="PointLight2D" parent="ResourcesMachine"]
-position = Vector2(52.968563, -72)
-color = Color(0.62, 0.17091332, 0.111600004, 1)
-energy = 3.0
-range_item_cull_mask = 512
-texture = SubResource("GradientTexture2D_s2j2j")
-
-[node name="RedLight2" type="PointLight2D" parent="ResourcesMachine"]
-position = Vector2(66.96025, -46)
-color = Color(0.62, 0.17091332, 0.111600004, 1)
-texture = SubResource("GradientTexture2D_iqcib")
-
-[node name="Monitor" parent="." instance=ExtResource("7_cfm2w")]
-position = Vector2(-22.000002, -6)
-scale = Vector2(1.0005939, 1)
-
-[node name="RedLight" type="PointLight2D" parent="Monitor"]
-position = Vector2(-41.97505, 47)
-color = Color(0.62, 0.17091332, 0.111600004, 1)
-energy = 1.16
-texture = SubResource("GradientTexture2D_s2j2j")
-
-[node name="MouseEmulator" parent="." instance=ExtResource("1_ntswj")]
-
 [node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = 100
 scroll_scale = Vector2(1.15, 1)
+scroll_offset = Vector2(-98, 0)
 
 [node name="CeilingTubes" type="Sprite2D" parent="Parallax2D"]
 position = Vector2(-308, 55.999996)
@@ -309,6 +337,7 @@ texture = ExtResource("3_76ouu")
 
 [node name="MatriarchParallax" type="Parallax2D" parent="."]
 visible = false
+z_index = 1
 scroll_scale = Vector2(1.05, 1)
 
 [node name="Matriarch" type="Sprite2D" parent="MatriarchParallax"]
@@ -322,6 +351,8 @@ material = SubResource("CanvasItemMaterial_btgwi")
 texture = ExtResource("19_6js7u")
 
 [node name="DeimosHand" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_vo7cp")]
+z_index = 100
+position = Vector2(-141, 84)
 camera = NodePath("../Camera2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -434,12 +465,11 @@ volume_db = -28.0
 bus = &"Sound Effects"
 script = ExtResource("15_uvk7a")
 
-[node name="InputGuideAdmin" type="Node" parent="."]
-script = ExtResource("16_76ouu")
-
 [node name="VisualStuff" type="Node" parent="."]
 
 [node name="PixelRect" type="ColorRect" parent="VisualStuff"]
+visible = false
+z_index = 4096
 material = SubResource("ShaderMaterial_76ouu")
 anchors_preset = 15
 anchor_right = 1.0
@@ -473,3 +503,13 @@ script = ExtResource("27_5sdax")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="VisualStuff"]
 environment = SubResource("Environment_uafmv")
+
+[node name="MouseEmulator" parent="." instance=ExtResource("1_ntswj")]
+
+[node name="InputGuideAdmin" type="Node" parent="."]
+script = ExtResource("16_76ouu")
+
+[node name="PhantomCameraTweenDirector" type="Node" parent="."]
+script = ExtResource("34_54ay5")
+tween_director = Array[ExtResource("35_8b6ar")]([SubResource("Resource_jm836")])
+metadata/_custom_type_script = "uid://ioirwmfgd4yu"

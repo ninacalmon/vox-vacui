@@ -394,6 +394,7 @@ light_mask = 17
 script = ExtResource("1_mlqjd")
 main_spr = NodePath("SpriteMiniBook")
 pcam = NodePath("NOTUSEDPhantomCamera2D")
+energy_message = "Está muito escuro."
 
 [node name="SpriteMiniBook" type="Sprite2D" parent="."]
 light_mask = 513
