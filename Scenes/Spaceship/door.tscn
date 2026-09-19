@@ -1,30 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://htap6wmpylrw"]
+[gd_scene load_steps=10 format=3 uid="uid://htap6wmpylrw"]
 
 [ext_resource type="Script" uid="uid://bvi2pvbxydcko" path="res://scenes/spaceship/door.gd" id="1_htx6n"]
 [ext_resource type="Shader" uid="uid://cccnue3fm2pyc" path="res://shaders/outline.gdshader" id="2_v60d0"]
 [ext_resource type="Texture2D" uid="uid://c11sdpki3rb42" path="res://sprites/spaceship_interior/SpaceshipExitDoor.png" id="3_ofsvt"]
-[ext_resource type="Script" uid="uid://jtbq6dor8pk0" path="res://scenes/modulars/clickable_highlight.gd" id="3_v60d0"]
+[ext_resource type="Texture2D" uid="uid://beinhniahsmx2" path="res://sprites/ui/circle3-export.png" id="5_lq1rf"]
 [ext_resource type="AudioStream" uid="uid://bjpdfvmmyk2k1" path="res://sound_effects/spaceship/SFX_dooropen.wav" id="5_v60d0"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_upch7"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_4nw6e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofsvt"]
 shader = ExtResource("2_v60d0")
 shader_parameter/rounded = true
 shader_parameter/alpha_threshold = 0.1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v60d0"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_g6a2c"]
+script = ExtResource("7_4nw6e")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofsvt"]
-bg_color = Color(0, 0, 0, 1)
-
-[node name="Door" type="Area2D" node_paths=PackedStringArray("clickable_highlight")]
+[node name="Door" type="Node2D" node_paths=PackedStringArray("main_spr", "pcam")]
 script = ExtResource("1_htx6n")
-zoom_in_amount = 1.0
-clickable_highlight = NodePath("ClickableHighlight")
-metadata/_custom_type_script = "uid://cj0pm0s1qx8my"
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(140, -234, -138, -293, -146, 292, 153, 232, 153, -223)
+main_spr = NodePath("Sprite2D")
+pcam = NodePath("NOTUSEDPhantomCamera2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 513
@@ -35,12 +30,6 @@ instance_shader_parameters/outline_width = 12
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_ofsvt")
 
-[node name="ClickableHighlight" type="Node2D" parent="." node_paths=PackedStringArray("area", "sprite")]
-script = ExtResource("3_v60d0")
-area = NodePath("..")
-sprite = NodePath("../Sprite2D")
-metadata/_custom_type_script = "uid://jtbq6dor8pk0"
-
 [node name="DoorSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_v60d0")
 volume_db = -6.0
@@ -49,51 +38,25 @@ bus = &"Sound Effects"
 [node name="ConfirmationCanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmationCanvasLayer"]
-clip_contents = false
+[node name="SkipProgress" type="TextureProgressBar" parent="ConfirmationCanvasLayer"]
+modulate = Color(1, 1, 1, 0.5019608)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = -20.0
-offset_right = 109.0
-offset_bottom = 11.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_v60d0")
-text = "Sair da nave?"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
+step = 0.001
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("5_lq1rf")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmationCanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = 16.0
-offset_right = 109.0
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 32
-
-[node name="ButtonNo" type="Button" parent="ConfirmationCanvasLayer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_ofsvt")
-text = "NÃO
-"
-
-[node name="ButtonYes" type="Button" parent="ConfirmationCanvasLayer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_ofsvt")
-text = "SIM
-"
+[node name="NOTUSEDPhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("6_upch7")
+tween_resource = SubResource("Resource_g6a2c")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
