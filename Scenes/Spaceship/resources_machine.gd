@@ -11,6 +11,7 @@ var was_used: bool = false
 
 var message: String = "Inserir fragmentos"
 
+
 func start():
 	current_state = States.BLOCKED
 
@@ -48,6 +49,7 @@ func _input(event: InputEvent) -> void:
 		SpaceshipEventBus.resource_count_started.emit(resource_counter.calculate_duration())
 		await count_resources()
 		SpaceshipEventBus.resource_count_finished.emit()
+		Globals.spaceship_energy = true
 		current_state = States.FREE
 		was_freed.emit()
 

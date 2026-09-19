@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cpd1q7shcbn7h" path="res://scenes/spaceship/focus_module.gd" id="4_0gr6q"]
 [ext_resource type="Shader" uid="uid://bpeqc2oh4cgdj" path="res://shaders/pixelated.gdshader" id="4_76ouu"]
 [ext_resource type="Texture2D" uid="uid://dsyx4jt8a7deg" path="res://sprites/ui/kenney_input/tile_0568.png" id="5_tfcmn"]
-[ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/Monitor.tscn" id="7_cfm2w"]
+[ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/monitor.tscn" id="7_cfm2w"]
 [ext_resource type="PackedScene" uid="uid://dckqqes7uw3fy" path="res://scenes/spaceship/deimos_hands.tscn" id="7_vo7cp"]
 [ext_resource type="Texture2D" uid="uid://6ivw36hwbai8" path="res://sprites/spaceship_interior/machine/SpaceshipCable.png" id="8_3unc4"]
 [ext_resource type="PackedScene" uid="uid://brt0pxwj3kby8" path="res://scenes/spaceship/papers.tscn" id="9_cd6pq"]

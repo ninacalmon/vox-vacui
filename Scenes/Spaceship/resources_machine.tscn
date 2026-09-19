@@ -164,6 +164,7 @@ script = ExtResource("9_x7ic0")
 [node name="SpriteValve" type="Sprite2D" parent="."]
 light_mask = 513
 material = SubResource("ShaderMaterial_x7ic0")
+instance_shader_parameters/enabled = false
 instance_shader_parameters/outline_width = 6
 position = Vector2(77.20001, -53.899994)
 texture = ExtResource("6_wbabi")

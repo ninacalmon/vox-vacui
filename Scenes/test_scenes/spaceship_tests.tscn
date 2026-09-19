@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clcug6p51l2er"]
+[gd_scene load_steps=12 format=3 uid="uid://clcug6p51l2er"]
 
 [ext_resource type="Script" uid="uid://c0f4awlsn252c" path="res://scenes/test_scenes/spaceship_tests.gd" id="1_i4xoc"]
 [ext_resource type="Texture2D" uid="uid://de57pwcmxnpsx" path="res://sprites/spaceship_interior/SpaceshipBackgroundSemiFinalVer.png" id="2_w8m7j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_jptkv"]
 [ext_resource type="Script" uid="uid://i6flb1lywrd5" path="res://scenes/test_scenes/interactable.gd" id="7_7jqge"]
 [ext_resource type="PackedScene" uid="uid://ck6swxjky54l3" path="res://scenes/spaceship/resources_machine.tscn" id="7_dhsi0"]
+[ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/monitor.tscn" id="8_jptkv"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_m8yek"]
 [ext_resource type="PackedScene" uid="uid://dckqqes7uw3fy" path="res://scenes/spaceship/deimos_hands.tscn" id="9_nc3jv"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_6i4qk"]
@@ -30,8 +31,8 @@ script = ExtResource("7_7jqge")
 requires_energy = false
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable"]
+position = Vector2(308, 0)
 script = ExtResource("9_m8yek")
-zoom = Vector2(0.55, 0.55)
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
@@ -39,23 +40,21 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 position = Vector2(242, -163)
 
 [node name="Interactable2" type="Node2D" parent="InteractionManager"]
-position = Vector2(83, 0)
+position = Vector2(-34, -29)
 script = ExtResource("7_7jqge")
-requires_energy = false
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/Interactable2"]
+position = Vector2(0, -2)
 script = ExtResource("9_m8yek")
-zoom = Vector2(0.55, 0.55)
 tween_resource = SubResource("Resource_m8yek")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="ResourcesMachine" parent="InteractionManager/Interactable2" instance=ExtResource("7_dhsi0")]
-position = Vector2(242, -163)
+[node name="Monitor" parent="InteractionManager/Interactable2" instance=ExtResource("8_jptkv")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 top_level = true
-position = Vector2(396, -230)
-zoom = Vector2(1.585, 1.585)
+position = Vector2(-34, -74)
+zoom = Vector2(6.18, 6.18)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300

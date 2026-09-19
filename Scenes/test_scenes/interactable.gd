@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("confirm")
 	and current_state == States.WAITING):
 
-		if requires_energy and not Globals.has_energy_in_spaceship:
+		if requires_energy and not Globals.spaceship_energy:
 			HandsEventBus.not_yet.emit()
 			if not StatsManager.day == 3:
 				PopUpSystem.show_text(action_exc.energy_message)

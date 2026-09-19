@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dlv776axrbuj0" path="res://sprites/background_legacy.png" id="1_mlhmh"]
 [ext_resource type="PackedScene" uid="uid://fjxp66w0rpvl" path="res://scenes/ui/PowerUpSetup.tscn" id="2_h1t7e"]
 [ext_resource type="Script" uid="uid://mltr71hmkppb" path="res://scenes/ui/resources_counter_texts.gd" id="2_m21qu"]
-[ext_resource type="Script" uid="uid://ce4k3gvavwn0b" path="res://scenes/ui/power_ups_container.gd" id="2_ws088"]
+[ext_resource type="Script" uid="uid://ce4k3gvavwn0b" path="res://scenes/ui/power_ups_ui.gd" id="2_ws088"]
 [ext_resource type="AudioStream" uid="uid://3ywm8o38t0d4" path="res://sound_effects/ui/value_up3.wav" id="5_ws088"]
 [ext_resource type="Script" uid="uid://dd5gfcig6vm08" path="res://scenes/ui/button.gd" id="6_x6732"]
 [ext_resource type="Texture2D" uid="uid://berv7f5gv13en" path="res://sprites/background.png" id="10_m5xn0"]
