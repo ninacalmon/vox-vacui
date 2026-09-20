@@ -470,6 +470,7 @@ script = ExtResource("15_uvk7a")
 [node name="VisualStuff" type="Node" parent="."]
 
 [node name="PixelRect" type="ColorRect" parent="VisualStuff"]
+visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_76ouu")
 anchors_preset = 15
