@@ -63,7 +63,7 @@ func count_resources():
 		HandsEventBus.machine_interaction.emit()
 		await get_tree().create_timer(0.5).timeout
 		sprite_valve.frame = 0
-		shake_module.shake(self, resource_counter.calculate_duration() * 1.5, 0.5)
+		shake_module.shake(main_spr, resource_counter.calculate_duration() * 1.5, 0.3)
 
 		await resource_counter.execute()
 

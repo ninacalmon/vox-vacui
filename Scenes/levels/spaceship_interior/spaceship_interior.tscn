@@ -53,17 +53,17 @@ height = 145
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_s2j2j"]
-gradient = SubResource("Gradient_cd6pq")
-width = 159
-height = 74
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iqcib"]
 gradient = SubResource("Gradient_cd6pq")
 width = 244
 height = 219
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s2j2j"]
+gradient = SubResource("Gradient_cd6pq")
+width = 159
+height = 74
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -213,14 +213,6 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="ResourcesMachine" parent="InteractionManager/ResourcesMachineInteractable" instance=ExtResource("10_cfm2w")]
 position = Vector2(242, -163)
-
-[node name="RedLight" type="PointLight2D" parent="InteractionManager/ResourcesMachineInteractable"]
-position = Vector2(313, -205)
-scale = Vector2(1.0005939, 1)
-color = Color(0.62, 0.17091332, 0.111600004, 1)
-energy = 3.0
-range_item_cull_mask = 512
-texture = SubResource("GradientTexture2D_s2j2j")
 
 [node name="RedLight2" type="PointLight2D" parent="InteractionManager/ResourcesMachineInteractable"]
 position = Vector2(318, -206)
