@@ -5,13 +5,14 @@ enum State {
 	IDLE,
 	CHASE,
 	FLEE,
+	WANDER
 }
 
 @export var stun_time: float = 6
 
 @export var flee_speed_multiplier: float = 1.0
 
-@export var safe_distance: float = 180
+@export var safe_distance: float = 100
 
 @export var fleeing_time: Vector2 = Vector2(1, 1.5)
 
@@ -21,11 +22,16 @@ var can_attack: bool = true
 
 var chase_timer: float = 0.0
 
+var wander_direction: Vector2 = Vector2.ZERO
+
+var wander_timer: float = 0.0
+
 @onready var mat: ShaderMaterial = sprite_2d.material
 
 func _ready():
 	hurt_box.damage_taken.connect(_on_damage_taken)
 	aggro_area.body_entered.connect(_on_aggro_entered)
+	aggro_area.body_exited.connect(_on_aggro_exited)
 
 func _process(delta):
 	if not is_instance_valid(player):
@@ -45,8 +51,17 @@ func _process(delta):
 			start_flee_timer()
 
 		if dist >= safe_distance and chase_timer <= 0:
-			state = State.CHASE
-			can_attack = true
+			if aggro_area.get_overlapping_bodies().has(player):
+				state = State.CHASE
+				can_attack = true
+			else:
+				state = State.WANDER
+				randomize_wander()
+
+	if state == State.WANDER:
+		wander_timer -= delta
+		if wander_timer <= 0:
+			randomize_wander()
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D):
 	match state:
@@ -65,13 +80,16 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D):
 				start_flee_timer()
 
 		State.FLEE:
-			var dir = player.global_position.direction_to(global_position)
-			apply_movement(_state, dir, speed * flee_speed_multiplier)
+			var dist = global_position.distance_to(player.global_position)
 
 			# If player gets close again → reset timer (keep fleeing)
-			var dist = global_position.distance_to(player.global_position)
 			if dist < safe_distance:
+				var dir = player.global_position.direction_to(global_position)
+				apply_movement(_state, dir, speed * flee_speed_multiplier)
 				start_flee_timer()
+		
+		State.WANDER:
+			apply_movement(_state, wander_direction, wander_speed)
 
 	# Clamp velocity
 	if _state.linear_velocity.length() > max_velocity:
@@ -126,13 +144,21 @@ func flash():
 	await get_tree().create_timer(0.1).timeout
 	mat.set_shader_parameter("tint_strength", 0)
 
+func randomize_wander():
+	wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	wander_timer = randf_range(1.0, 3.0)
+
 # Signals
 func _on_aggro_entered(body):
-	if body is Player and state == State.IDLE:
+	if body is Player and (state == State.IDLE or state == State.WANDER):
 		state = State.FLEE
 		player = body
 		start_flee_timer()
 		sleeping = false
+
+func _on_aggro_exited(body):
+	if body is Player and state == State.CHASE:
+		state = State.WANDER
 
 func _on_damage_taken(amount: float, _causer: Node2D):
 	life -= amount
