@@ -16,6 +16,8 @@ enum State {
 
 @export var fleeing_time: Vector2 = Vector2(1, 1.5)
 
+@export var flee_brake_speed: float = 6.0
+
 var state: State = State.IDLE
 
 var can_attack: bool = true
@@ -82,11 +84,16 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D):
 		State.FLEE:
 			var dist = global_position.distance_to(player.global_position)
 
-			# If player gets close again → reset timer (keep fleeing)
 			if dist < safe_distance:
+				# If player gets close again → reset timer (keep fleeing)
 				var dir = player.global_position.direction_to(global_position)
 				apply_movement(_state, dir, speed * flee_speed_multiplier)
 				start_flee_timer()
+			else:
+				# Already far enough —> stop accelerating away and actively
+				# shed the residual velocity, so it doesn't coast out of the
+				# AggroArea before the flee timer can finish counting down.
+				_state.linear_velocity = _state.linear_velocity.move_toward(Vector2.ZERO, flee_brake_speed)
 		
 		State.WANDER:
 			apply_movement(_state, wander_direction, wander_speed)
