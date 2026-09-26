@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://coahuft63xqca"]
+[gd_scene load_steps=11 format=3 uid="uid://coahuft63xqca"]
 
 [ext_resource type="Script" uid="uid://bptehg4lojwkg" path="res://scenes/spaceship/ui/resources_label.gd" id="1_6hd2b"]
 [ext_resource type="Texture2D" uid="uid://66jhwcha15q8" path="res://sprites/ui/kenney_input/tile_calendar.png" id="1_xmkce"]
 [ext_resource type="Script" uid="uid://cupbln1kclekx" path="res://scenes/ui/day_control.gd" id="2_isle0"]
 [ext_resource type="Script" uid="uid://bnroivcak8mw" path="res://scenes/spaceship/ui/focus_exit_button.gd" id="2_okbct"]
+[ext_resource type="Texture2D" uid="uid://di2ndivrt2452" path="res://sprites/ui/kenney_input/tile_0823.png" id="5_5ckvp"]
+[ext_resource type="Script" uid="uid://bhboqjyxuye7x" path="res://scenes/spaceship/ui/snapping_ui_buttons.gd" id="5_b7aq1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b7aq1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpxnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w8faa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2hlp"]
 
 [node name="UISpaceship" type="Control"]
 layout_mode = 3
@@ -114,3 +124,53 @@ bbcode_enabled = true
 text = "dia
 #"
 horizontal_alignment = 1
+
+[node name="SnappingHBoxContainer" type="HBoxContainer" parent="UIControlRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_b7aq1")
+
+[node name="ButtonL" type="Button" parent="UIControlRect/SnappingHBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b7aq1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bpxnp")
+
+[node name="TextureRect" type="TextureRect" parent="UIControlRect/SnappingHBoxContainer/ButtonL"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("5_5ckvp")
+
+[node name="ButtonR" type="Button" parent="UIControlRect/SnappingHBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w8faa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e2hlp")
+
+[node name="TextureRect" type="TextureRect" parent="UIControlRect/SnappingHBoxContainer/ButtonR"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_5ckvp")
+flip_h = true

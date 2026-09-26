@@ -30,6 +30,7 @@ var next_scene_path: String = "res://scenes/levels/menus/menu.tscn"
 
 var last_level_path: String
 
+## i dont know what the FUCK i made here vvvvvv but im afraid of changing it.
 var has_energy_in_spaceship: bool = false:
 	set (value):
 		if value == true:
@@ -37,6 +38,8 @@ var has_energy_in_spaceship: bool = false:
 			has_energy_in_spaceship = false
 
 var fragments_value_to_sum: int = 0
+
+var spaceship_energy: bool = false
 
 func _ready() -> void:
 	EventBus.cutscene_on.connect(func(): is_cutscene = true)

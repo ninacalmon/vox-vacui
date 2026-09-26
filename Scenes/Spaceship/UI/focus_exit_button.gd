@@ -10,16 +10,16 @@ func _ready() -> void:
 	SpaceshipEventBus.focus_changed.connect(_on_focus_mode_changed)
 	pressed.connect(_on_button_pressed)
 
-func _process(_delta: float) -> void:
-	if current_subject:
-		can_operate =  current_subject.can_exit
-
-	if Input.is_action_just_pressed("return"):
-		if not can_operate:
-			return
-		if current_subject is ResourcesMachine:
-			SpaceshipEventBus.focus_off.emit(true)
-		else: SpaceshipEventBus.focus_off.emit()
+#func _process(_delta: float) -> void:
+	#if current_subject:
+		#can_operate =  current_subject.can_exit
+#
+	#if Input.is_action_just_pressed("return"):
+		#if not can_operate:
+			#return
+		#if current_subject is ResourcesMachine:
+			#SpaceshipEventBus.focus_off.emit(true)
+		#else: SpaceshipEventBus.focus_off.emit()
 
 func _on_focus_mode_changed(focus: bool, subject: Node2D):
 	if focus == false:

@@ -23,12 +23,14 @@ func _ready() -> void:
 
 	HandsEventBus.machine_interaction.connect(_on_machine_interaction)
 	HandsEventBus.monitor.connect(_on_monitor)
-	HandsEventBus.door_interaction.connect(_on_door_interacted)
+	HandsEventBus.not_yet.connect(_on_door_interacted)
 	HandsEventBus.book.connect(_on_book)
 	hands_animation.play("Idle")
 
+
 func _process(_delta: float) -> void:
-	global_position = camera.global_position + camera.offset
+	global_position = camera.global_position + camera.offset + Vector2(0, 120)
+
 
 func _input(event: InputEvent) -> void:
 	if event:

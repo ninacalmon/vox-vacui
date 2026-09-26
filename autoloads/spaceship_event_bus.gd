@@ -20,3 +20,9 @@ signal resources_spent
 
 @warning_ignore("unused_signal")
 signal player_going_out
+
+
+@warning_ignore("unused_signal")
+signal snap_ui_left
+@warning_ignore("unused_signal")
+signal snap_ui_right

@@ -61,10 +61,20 @@ extends Node2D
 	- Novas câmeras para cada Interactable.
 
 6. ETAPAS:
-	1- Desenvolvimento da classe 'Interactable'- EM ANDAMENTO
-	2- Desenvolvimento InteractableManager - FEITO
-	3- Câmeras - EM ANDAMENTO
-	4- UI
-	6- Testes
-	7- Ajustes visuais
+	1 - Desenvolvimento da classe 'Interactable'- FEITO
+	2 - Desenvolvimento InteractableManager - FEITO
+	3 - Câmeras - FEITO
+	4 - Ajustar cada um dos objetos para funcionar com o sistema novo: - FEITO
+		4.1 - ResourcesMachine - FEITO
+		4.2 - Monitor - FEITO
+		4.3 - Porta saída - FEITO
+		4.4 - Porta trancada - FEITO
+		4.5 - Diário - FEITO
+		4.6 - Papéis - FEITO
+	5 - UI - FEITO
+	6 - Organizar pastas - FEITO
+	7 - Implementar na cena real - FEITO
+	8 - Ajustar mãos - EM ANDAMENTO
+	9 - Ajustar InputGuide -
+	10 - Ajustes visuais -
 '''

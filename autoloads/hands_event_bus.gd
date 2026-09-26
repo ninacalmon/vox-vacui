@@ -16,6 +16,6 @@ signal page_prev
 signal page_next
 
 @warning_ignore("unused_signal")
-signal door_interaction
+signal not_yet
 
 var hand_is_busy: bool

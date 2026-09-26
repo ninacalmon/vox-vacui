@@ -59,7 +59,7 @@ func test_hands_event_bus_defines_interaction_signals() -> void:
 	assert_that(names).contains("book")
 	assert_that(names).contains("page_prev")
 	assert_that(names).contains("page_next")
-	assert_that(names).contains("door_interaction")
+	assert_that(names).contains("not_yet")
 
 func test_hands_event_bus_starts_not_busy() -> void:
 	assert_that(HandsEventBus.hand_is_busy).is_false()

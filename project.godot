@@ -36,6 +36,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://cmlx2ppg3l6lj"
 

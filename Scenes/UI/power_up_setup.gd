@@ -1,5 +1,9 @@
 class_name PowerUpSetup
 extends VBoxContainer
+
+
+signal busy_state_changed()
+
 @export_enum("Impulse", "Fuel", "Teleport", "Health", "Propulsors", "Bullet", "Perfurator") var effect: String
 
 @export var title: String
@@ -38,6 +42,8 @@ var custom_tooltip_text
 
 @onready var bought_power_up: AudioStreamPlayer = $BoughtPowerUp
 
+
+
 func _ready() -> void:
 	current_level = PowerUps.get_current_level(effect)
 	modulate = default_color
@@ -53,6 +59,7 @@ func _ready() -> void:
 	#texture_button.mouse_entered.connect(_on_focus_entered)
 	#texture_button.mouse_exited.connect(_on_focus_exited)
 
+
 func setup_nodes():
 	progress_bar.value = 0
 	var next_level: int = min(current_level + 1, max_level)
@@ -63,6 +70,7 @@ func setup_nodes():
 	description_label.text = description_label.text.replace("&", next_level_string)
 	texture_button.texture_normal = texture
 
+
 func check_availability():
 	have_enough_to_buy = StatsManager.current_resources >= price
 
@@ -70,6 +78,7 @@ func check_availability():
 		deactivate_buying("Not enough resources")
 	if current_level >= max_level:
 		deactivate_buying("Already at max level")
+
 
 func deactivate_buying(reason: String):
 	default_color = unavailiable_color
@@ -83,7 +92,10 @@ func deactivate_buying(reason: String):
 		custom_tooltip_text = "Já alcançou o nível máximo.
 nível [color=68b820]%d / %d[/color]" %[current_level, max_level]
 
+
 func buy_power_up():
+	become_busy()
+
 	PowerUps.add_current_level(effect)
 	current_level = PowerUps.get_current_level(effect)
 	#modulate = bought_color
@@ -102,6 +114,24 @@ func buy_power_up():
 	progress_bar.hide()
 	setup_nodes()
 
+	become_free()
+
+
+func become_busy() -> void:
+	add_to_group("Busy_PU_Button_Group")
+	_notify_pu_state_changed()
+
+
+func become_free() -> void:
+	remove_from_group("Busy_PU_Button_Group")
+	_notify_pu_state_changed()
+
+
+func _notify_pu_state_changed() -> void:
+	for node in get_tree().get_nodes_in_group("PU_State_Listeners"):
+		node.update_pu_state()
+
+
 func shake():
 	var original_pos_x = position.x
 	var tween = create_tween()
@@ -111,8 +141,10 @@ func shake():
 	tween.tween_property(self, "position:x", original_pos_x+4, 0.1)
 	tween.tween_property(self, "position:x", original_pos_x, 0.1)
 
+
 func _grab_focus():
 	texture_button.grab_focus()
+
 
 func _on_button_pressed():
 	if not have_enough_to_buy:
@@ -120,15 +152,18 @@ func _on_button_pressed():
 		return
 	buy_power_up()
 
+
 func _on_focus_entered():
 	modulate = focused_color
 	if custom_tooltip_text:
 		CustomTooltip.show_tooltip(custom_tooltip_text, self.global_position)
 
+
 func _on_focus_exited():
 	modulate = default_color
 	if custom_tooltip_text:
 		CustomTooltip.hide_tooltip()
+
 
 func _on_resources_spent():
 	check_availability()

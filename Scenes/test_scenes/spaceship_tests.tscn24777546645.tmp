@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://clcug6p51l2er"]
+
+[ext_resource type="Script" uid="uid://c0f4awlsn252c" path="res://scenes/test_scenes/spaceship_tests.gd" id="1_i4xoc"]
+[ext_resource type="Texture2D" uid="uid://de57pwcmxnpsx" path="res://sprites/spaceship_interior/SpaceshipBackgroundSemiFinalVer.png" id="2_w8m7j"]
+[ext_resource type="Script" uid="uid://d6shl6mm32n" path="res://scenes/test_scenes/interaction_manager.gd" id="5_7jqge"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_jptkv"]
+[ext_resource type="PackedScene" uid="uid://htap6wmpylrw" path="res://scenes/spaceship/door.tscn" id="7_6i4qk"]
+[ext_resource type="Script" uid="uid://i6flb1lywrd5" path="res://scenes/test_scenes/interactable.gd" id="7_7jqge"]
+[ext_resource type="PackedScene" uid="uid://ck6swxjky54l3" path="res://scenes/spaceship/resources_machine.tscn" id="7_dhsi0"]
+[ext_resource type="PackedScene" uid="uid://bkjjj01xixl1j" path="res://scenes/spaceship/monitor.tscn" id="8_jptkv"]
+[ext_resource type="PackedScene" uid="uid://djdhgyun4m2fy" path="res://scenes/spaceship/door_closed.tscn" id="9_6i4qk"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_m8yek"]
+[ext_resource type="PackedScene" uid="uid://dckqqes7uw3fy" path="res://scenes/spaceship/deimos_hands.tscn" id="9_nc3jv"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_6i4qk"]
+[ext_resource type="PackedScene" uid="uid://brt0pxwj3kby8" path="res://scenes/spaceship/papers.tscn" id="11_jtif7"]
+[ext_resource type="PackedScene" uid="uid://bvmqc5jgquxeu" path="res://scenes/spaceship/diary.tscn" id="12_2q7e0"]
+
+[sub_resource type="Resource" id="Resource_m8yek"]
+script = ExtResource("10_6i4qk")
+
+[node name="SpaceshipTests" type="Node2D"]
+script = ExtResource("1_i4xoc")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(13.000001, -19.000013)
+scale = Vector2(0.6347222, 0.6253333)
+texture = ExtResource("2_w8m7j")
+
+[node name="InteractionManager" type="Node" parent="."]
+script = ExtResource("5_7jqge")
+
+[node name="ExitDoorInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(-1335, 66)
+script = ExtResource("7_7jqge")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ExitDoorInteractable"]
+position = Vector2(0, -2)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Door" parent="InteractionManager/ExitDoorInteractable" instance=ExtResource("7_6i4qk")]
+
+[node name="ResourcesMachineInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(-972, 0)
+script = ExtResource("7_7jqge")
+requires_energy = false
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ResourcesMachineInteractable"]
+position = Vector2(308, 0)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="ResourcesMachine" parent="InteractionManager/ResourcesMachineInteractable" instance=ExtResource("7_dhsi0")]
+position = Vector2(242, -163)
+
+[node name="MonitorInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(-34, -29)
+script = ExtResource("7_7jqge")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/MonitorInteractable"]
+position = Vector2(0, -2)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Monitor" parent="InteractionManager/MonitorInteractable" instance=ExtResource("8_jptkv")]
+
+[node name="DiaryInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(303, 108)
+script = ExtResource("7_7jqge")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/DiaryInteractable"]
+position = Vector2(0, -2)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Diary" parent="InteractionManager/DiaryInteractable" instance=ExtResource("12_2q7e0")]
+
+[node name="LockedDoorInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(946, -60)
+script = ExtResource("7_7jqge")
+requires_energy = false
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/LockedDoorInteractable"]
+position = Vector2(0, -2)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="DoorClosed" parent="InteractionManager/LockedDoorInteractable" instance=ExtResource("9_6i4qk")]
+
+[node name="PapersInteractable" type="Node2D" parent="InteractionManager"]
+position = Vector2(1333, -61)
+script = ExtResource("7_7jqge")
+
+[node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/PapersInteractable"]
+position = Vector2(0, -2)
+script = ExtResource("9_m8yek")
+tween_resource = SubResource("Resource_m8yek")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Papers" parent="InteractionManager/PapersInteractable" instance=ExtResource("11_jtif7")]
+energy_message = "Está muito escuro."
+
+[node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+position = Vector2(1330, -33)
+zoom = Vector2(3.55, 3.55)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("6_jptkv")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="DeimosHand" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_nc3jv")]
+z_index = 2
+camera = NodePath("../Camera2D")

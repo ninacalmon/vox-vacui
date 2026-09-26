@@ -18,6 +18,9 @@ var audio_stream_player: AudioStreamPlayer
 var electric_sound: AudioStream  = preload("res://sound_effects/spaceship/buzz.ogg")
 
 func initialize() -> void:
+	if timer:
+		return
+
 	timer = Timer.new()
 	timer.wait_time = randi_range(first_flicker_interval_min, first_flicker_interval_max)
 	audio_stream_player = AudioStreamPlayer.new()
