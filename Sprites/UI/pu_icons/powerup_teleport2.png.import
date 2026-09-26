@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fdcpjgd8gif6"
-path="res://.godot/imported/powerup_teleport2.png-a573392084904b8af1c563ac6c33ef0c.ctex"
+path="res://.godot/imported/powerup_teleport2.png-2e13835c46ff55b132692e14718d3104.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui/pu_icons/powerup_teleport2.png"
-dest_files=["res://.godot/imported/powerup_teleport2.png-a573392084904b8af1c563ac6c33ef0c.ctex"]
+source_file="res://Sprites/UI/pu_icons/powerup_teleport2.png"
+dest_files=["res://.godot/imported/powerup_teleport2.png-2e13835c46ff55b132692e14718d3104.ctex"]
 
 [params]
 

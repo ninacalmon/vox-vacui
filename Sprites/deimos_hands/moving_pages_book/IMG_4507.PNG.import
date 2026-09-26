@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlyw7eieh3w8t"
-path="res://.godot/imported/IMG_4507.PNG-21c1b8ad36b1f72c21d87f008b22d718.ctex"
+path="res://.godot/imported/IMG_4507.PNG-db6a9050d01450516b6aab8461ccef73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/deimos_hands/moving_pages_book/IMG_4507.PNG"
-dest_files=["res://.godot/imported/IMG_4507.PNG-21c1b8ad36b1f72c21d87f008b22d718.ctex"]
+source_file="res://Sprites/deimos_hands/moving_pages_book/IMG_4507.PNG"
+dest_files=["res://.godot/imported/IMG_4507.PNG-db6a9050d01450516b6aab8461ccef73.ctex"]
 
 [params]
 

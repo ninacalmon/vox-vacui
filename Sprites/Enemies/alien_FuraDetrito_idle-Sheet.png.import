@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3pnsx5o7lss8"
-path="res://.godot/imported/alien_FuraDetrito_idle-Sheet.png-591c691b2f3e4e330ad002a415ab5e53.ctex"
+path="res://.godot/imported/alien_FuraDetrito_idle-Sheet.png-5d65cb4a0589f16ae274f63941997d6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/alien_FuraDetrito_idle-Sheet.png"
-dest_files=["res://.godot/imported/alien_FuraDetrito_idle-Sheet.png-591c691b2f3e4e330ad002a415ab5e53.ctex"]
+source_file="res://Sprites/Enemies/alien_FuraDetrito_idle-Sheet.png"
+dest_files=["res://.godot/imported/alien_FuraDetrito_idle-Sheet.png-5d65cb4a0589f16ae274f63941997d6a.ctex"]
 
 [params]
 

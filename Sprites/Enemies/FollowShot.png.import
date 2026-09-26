@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu1yx2viodbgk"
-path="res://.godot/imported/FollowShot.png-3be6a5ef94cbcca57dea00a4fb4b668c.ctex"
+path="res://.godot/imported/FollowShot.png-594dff6e4f111810539dd2b6a1d1b47f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/FollowShot.png"
-dest_files=["res://.godot/imported/FollowShot.png-3be6a5ef94cbcca57dea00a4fb4b668c.ctex"]
+source_file="res://Sprites/Enemies/FollowShot.png"
+dest_files=["res://.godot/imported/FollowShot.png-594dff6e4f111810539dd2b6a1d1b47f.ctex"]
 
 [params]
 

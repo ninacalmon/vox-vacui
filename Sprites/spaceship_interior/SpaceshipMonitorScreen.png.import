@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5oolandwoj16"
-path="res://.godot/imported/SpaceshipMonitorScreen.png-c4ea5f1c6707064afa17399c5ccbcf99.ctex"
+path="res://.godot/imported/SpaceshipMonitorScreen.png-04ad6008c45d995970613555e87bd9ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spaceship_interior/SpaceshipMonitorScreen.png"
-dest_files=["res://.godot/imported/SpaceshipMonitorScreen.png-c4ea5f1c6707064afa17399c5ccbcf99.ctex"]
+source_file="res://Sprites/spaceship_interior/SpaceshipMonitorScreen.png"
+dest_files=["res://.godot/imported/SpaceshipMonitorScreen.png-04ad6008c45d995970613555e87bd9ea.ctex"]
 
 [params]
 

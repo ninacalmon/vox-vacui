@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqi8hujotdl5x"
-path="res://.godot/imported/CutsceneInicial1.png-70c91a3f36347bf2ad834f435e6fe86c.ctex"
+path="res://.godot/imported/CutsceneInicial1.png-59d4b982a5f7a7f2cfe80ee3d33d1713.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cutscenes/cutscene_context/CutsceneInicial1.png"
-dest_files=["res://.godot/imported/CutsceneInicial1.png-70c91a3f36347bf2ad834f435e6fe86c.ctex"]
+source_file="res://Sprites/Cutscenes/cutscene_context/CutsceneInicial1.png"
+dest_files=["res://.godot/imported/CutsceneInicial1.png-59d4b982a5f7a7f2cfe80ee3d33d1713.ctex"]
 
 [params]
 

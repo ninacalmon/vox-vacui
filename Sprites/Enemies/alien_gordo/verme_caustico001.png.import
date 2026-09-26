@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1eujxvtnw04h"
-path="res://.godot/imported/verme_caustico001.png-175b3184d4725d27fc3135cd5b179247.ctex"
+path="res://.godot/imported/verme_caustico001.png-afe7a17e730b49bff9ac80f37d0a964a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/alien_gordo/verme_caustico001.png"
-dest_files=["res://.godot/imported/verme_caustico001.png-175b3184d4725d27fc3135cd5b179247.ctex"]
+source_file="res://Sprites/Enemies/alien_gordo/verme_caustico001.png"
+dest_files=["res://.godot/imported/verme_caustico001.png-afe7a17e730b49bff9ac80f37d0a964a.ctex"]
 
 [params]
 

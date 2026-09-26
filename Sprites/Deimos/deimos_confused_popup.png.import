@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biyu4g7rbmpx0"
-path="res://.godot/imported/deimos_confused_popup.png-1fd2f6e47da6252d830e9ac2ebaa2b9b.ctex"
+path="res://.godot/imported/deimos_confused_popup.png-3c4ccf6c75064efec6ba65c0b38b333a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/deimos/deimos_confused_popup.png"
-dest_files=["res://.godot/imported/deimos_confused_popup.png-1fd2f6e47da6252d830e9ac2ebaa2b9b.ctex"]
+source_file="res://Sprites/Deimos/deimos_confused_popup.png"
+dest_files=["res://.godot/imported/deimos_confused_popup.png-3c4ccf6c75064efec6ba65c0b38b333a.ctex"]
 
 [params]
 

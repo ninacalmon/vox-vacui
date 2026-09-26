@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctafl188ghyw8"
-path="res://.godot/imported/fuelbar.png-628a58cb6bd877f91a7054836a500141.ctex"
+path="res://.godot/imported/fuelbar.png-c95dc2877523123febd1599ee24c2c35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui/fuelbar.png"
-dest_files=["res://.godot/imported/fuelbar.png-628a58cb6bd877f91a7054836a500141.ctex"]
+source_file="res://Sprites/UI/fuelbar.png"
+dest_files=["res://.godot/imported/fuelbar.png-c95dc2877523123febd1599ee24c2c35.ctex"]
 
 [params]
 

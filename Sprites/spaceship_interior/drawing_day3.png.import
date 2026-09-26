@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brh00yh5i13bo"
-path="res://.godot/imported/drawing_day3.png-edd58a9bb984e6b9577239894fbcc4b3.ctex"
+path="res://.godot/imported/drawing_day3.png-87f26cec1e79d4500d0931263e71b18e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spaceship_interior/drawing_day3.png"
-dest_files=["res://.godot/imported/drawing_day3.png-edd58a9bb984e6b9577239894fbcc4b3.ctex"]
+source_file="res://Sprites/spaceship_interior/drawing_day3.png"
+dest_files=["res://.godot/imported/drawing_day3.png-87f26cec1e79d4500d0931263e71b18e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhtobhw3p6586"
-path="res://.godot/imported/temporary_planet_03.png-8787b42802c4896bd9790f26493eb565.ctex"
+path="res://.godot/imported/temporary_planet_03.png-043be4c73a7de1bfe55641d386cf637e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/temporary_planets/temporary_planet_03.png"
-dest_files=["res://.godot/imported/temporary_planet_03.png-8787b42802c4896bd9790f26493eb565.ctex"]
+source_file="res://Sprites/temporary_planets/temporary_planet_03.png"
+dest_files=["res://.godot/imported/temporary_planet_03.png-043be4c73a7de1bfe55641d386cf637e.ctex"]
 
 [params]
 

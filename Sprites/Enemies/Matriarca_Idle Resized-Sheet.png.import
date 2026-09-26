@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0lmp1bkulkw7"
-path="res://.godot/imported/Matriarca_Idle Resized-Sheet.png-33646126b1b17f2d3fe5978da3fd56fb.ctex"
+path="res://.godot/imported/Matriarca_Idle Resized-Sheet.png-644150138c3482feccbe9fb5ae464ab7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/Matriarca_Idle Resized-Sheet.png"
-dest_files=["res://.godot/imported/Matriarca_Idle Resized-Sheet.png-33646126b1b17f2d3fe5978da3fd56fb.ctex"]
+source_file="res://Sprites/Enemies/Matriarca_Idle Resized-Sheet.png"
+dest_files=["res://.godot/imported/Matriarca_Idle Resized-Sheet.png-644150138c3482feccbe9fb5ae464ab7.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csatxldn44760"
-path="res://.godot/imported/Idle3.PNG-a70702ac15f65fc5dead82faf13e5693.ctex"
+path="res://.godot/imported/Idle3.PNG-169def2804aa4f1a42d167e42e05db12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/deimos_hands/idle/Idle3.PNG"
-dest_files=["res://.godot/imported/Idle3.PNG-a70702ac15f65fc5dead82faf13e5693.ctex"]
+source_file="res://Sprites/deimos_hands/idle/Idle3.PNG"
+dest_files=["res://.godot/imported/Idle3.PNG-169def2804aa4f1a42d167e42e05db12.ctex"]
 
 [params]
 
