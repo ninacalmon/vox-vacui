@@ -29,7 +29,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	global_position = camera.global_position + camera.offset + Vector2(0, 120)
+	global_position = camera.global_position + Vector2(0, 110)
 
 
 func _input(event: InputEvent) -> void:
@@ -40,7 +40,8 @@ func _on_machine_interaction():
 	animation_player.play("machine_interact")
 	hands_animation.play("MachineInteract")
 	await hands_animation.animation_finished
-	animation_player.play("RESET")
+	animation_player.play_backwards("machine_interact")
+	#animation_player.play("RESET")
 	hands_animation.play("Idle")
 
 func _on_monitor(state: bool):
@@ -58,14 +59,16 @@ func _on_book(state: bool):
 	if state:
 		hands_animation.play("HoldingBook")
 	else:
+		await get_tree().create_timer(0.3).timeout
 		hands_animation.play("LettingGoOfBook")
 		await hands_animation.animation_finished
 		hands_animation.play("Idle")
 
 func _on_snot_timer_timout():
-	if not (hands_animation.animation == "Idle"):
+	if hands_animation.animation == "HoldingBook":
 		return
+	var current_anim: String = hands_animation.animation
 	hands_animation.play("Meleca")
 	await hands_animation.animation_finished
-	hands_animation.play("Idle")
+	hands_animation.play(current_anim)
 	snot_timer.start()

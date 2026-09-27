@@ -337,6 +337,18 @@ position = Vector2(-308, 55.999996)
 scale = Vector2(0.79236114, 0.75)
 texture = ExtResource("3_76ouu")
 
+[node name="CeilingTubes2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(4255, 55.999996)
+scale = Vector2(0.79236114, 0.75)
+texture = ExtResource("3_76ouu")
+flip_h = true
+
+[node name="CeilingTubes3" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-4845.0005, 61.000004)
+scale = Vector2(0.79236114, 0.75)
+texture = ExtResource("3_76ouu")
+flip_h = true
+
 [node name="MatriarchParallax" type="Parallax2D" parent="."]
 visible = false
 z_index = 1
@@ -354,7 +366,7 @@ texture = ExtResource("19_6js7u")
 
 [node name="DeimosHand" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_vo7cp")]
 z_index = 100
-position = Vector2(-141, 84)
+position = Vector2(-141, 78)
 camera = NodePath("../Camera2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -470,7 +482,6 @@ script = ExtResource("15_uvk7a")
 [node name="VisualStuff" type="Node" parent="."]
 
 [node name="PixelRect" type="ColorRect" parent="VisualStuff"]
-visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_76ouu")
 anchors_preset = 15

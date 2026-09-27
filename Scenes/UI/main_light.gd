@@ -33,7 +33,7 @@ func initialize() -> void:
 
 func flicker():
 	timer.stop()
-	audio_stream_player.volume_db = randf_range(-26, -22)
+	audio_stream_player.volume_db = randf_range(-34, -28)
 	audio_stream_player.pitch_scale = randf_range(1.8, 2.4)
 	audio_stream_player.play()
 	self.energy = 0
