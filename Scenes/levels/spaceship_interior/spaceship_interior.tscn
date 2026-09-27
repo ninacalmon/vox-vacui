@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://c0lfvcrle3frk"]
+[gd_scene load_steps=58 format=3 uid="uid://c0lfvcrle3frk"]
 
 [ext_resource type="Script" uid="uid://dh0io287hog2e" path="res://scenes/levels/spaceship_interior/spaceship_interior.gd" id="1_4wenu"]
 [ext_resource type="Texture2D" uid="uid://de57pwcmxnpsx" path="res://sprites/spaceship_interior/SpaceshipBackgroundSemiFinalVer.png" id="2_vhqlx"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://bhd4nuiu23e7l" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="36_j7e72"]
 [ext_resource type="Script" uid="uid://b4rbgn8xc2fvn" path="res://scenes/levels/spaceship_interior/camera_noise.gd" id="37_jm836"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="37_qw2ft"]
+[ext_resource type="Script" uid="uid://j2o3i3xk7epl" path="res://scenes/ui/mouse_handler.gd" id="38_qw2ft"]
 
 [sub_resource type="Resource" id="Resource_qw2ft"]
 script = ExtResource("6_8b6ar")
@@ -551,3 +552,6 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="InputGuideAdmin" type="Node" parent="." node_paths=PackedStringArray("interaction_manager")]
 script = ExtResource("16_76ouu")
 interaction_manager = NodePath("../InteractionManager")
+
+[node name="MouseHandler" type="Node" parent="."]
+script = ExtResource("38_qw2ft")
