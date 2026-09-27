@@ -1,7 +1,6 @@
-[gd_scene load_steps=58 format=3 uid="uid://c0lfvcrle3frk"]
+[gd_scene load_steps=57 format=3 uid="uid://c0lfvcrle3frk"]
 
 [ext_resource type="Script" uid="uid://dh0io287hog2e" path="res://scenes/levels/spaceship_interior/spaceship_interior.gd" id="1_4wenu"]
-[ext_resource type="PackedScene" uid="uid://cgfq6udrxu5hm" path="res://scenes/ui/mouse.tscn" id="1_ntswj"]
 [ext_resource type="Texture2D" uid="uid://de57pwcmxnpsx" path="res://sprites/spaceship_interior/SpaceshipBackgroundSemiFinalVer.png" id="2_vhqlx"]
 [ext_resource type="Texture2D" uid="uid://crf37jptk3dbk" path="res://sprites/spaceship_interior/SpaceshipTUBOS.png" id="3_76ouu"]
 [ext_resource type="Script" uid="uid://d6shl6mm32n" path="res://scenes/spaceship/interactables_system/interaction_manager.gd" id="3_568vh"]
@@ -179,6 +178,7 @@ starting_idx = 2
 [node name="ExitDoorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-1335, 66)
 script = ExtResource("4_a6ffb")
+action_type_array = Array[int]([1, 0])
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ExitDoorInteractable"]
 position = Vector2(129, -8)
@@ -202,6 +202,7 @@ texture = SubResource("GradientTexture2D_npxme")
 position = Vector2(-935, 134)
 script = ExtResource("4_a6ffb")
 requires_energy = false
+action_type_array = Array[int]([1, 14])
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ResourcesMachineInteractable"]
 position = Vector2(306, -126)
@@ -223,6 +224,7 @@ texture = SubResource("GradientTexture2D_iqcib")
 [node name="MonitorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-34, -29)
 script = ExtResource("4_a6ffb")
+action_type_array = Array[int]([1, 0, 10])
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/MonitorInteractable"]
 script = ExtResource("5_54ay5")
@@ -245,6 +247,7 @@ texture = SubResource("GradientTexture2D_s2j2j")
 position = Vector2(942, -85)
 script = ExtResource("4_a6ffb")
 requires_energy = false
+action_type_array = Array[int]([14])
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/LockedDoorInteractable"]
 position = Vector2(-14, 33)
@@ -260,6 +263,7 @@ z_index = -1
 [node name="DiaryInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(1044, 125)
 script = ExtResource("4_a6ffb")
+action_type_array = Array[int]([1, 15])
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/DiaryInteractable"]
 position = Vector2(4, -41)
@@ -282,6 +286,7 @@ texture = SubResource("GradientTexture2D_jx13q")
 [node name="PapersInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(1333, -61)
 script = ExtResource("4_a6ffb")
+action_type_array = Array[int]([1])
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/PapersInteractable"]
 position = Vector2(6, 9)
@@ -517,11 +522,6 @@ script = ExtResource("27_5sdax")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="VisualStuff"]
 environment = SubResource("Environment_uafmv")
 
-[node name="MouseEmulator" parent="." instance=ExtResource("1_ntswj")]
-
-[node name="InputGuideAdmin" type="Node" parent="."]
-script = ExtResource("16_76ouu")
-
 [node name="PhantomCameraNoiseEmitter2D" type="Node2D" parent="."]
 script = ExtResource("36_j7e72")
 noise = SubResource("Resource_g5vaq")
@@ -547,3 +547,7 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("13_j7e72")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="InputGuideAdmin" type="Node" parent="." node_paths=PackedStringArray("interaction_manager")]
+script = ExtResource("16_76ouu")
+interaction_manager = NodePath("../InteractionManager")

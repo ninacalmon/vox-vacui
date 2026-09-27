@@ -26,3 +26,9 @@ signal player_going_out
 signal snap_ui_left
 @warning_ignore("unused_signal")
 signal snap_ui_right
+
+
+@warning_ignore("unused_signal")
+signal inter_acting(inter: Interactable)
+@warning_ignore("unused_signal")
+signal inter_waiting

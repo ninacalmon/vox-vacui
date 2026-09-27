@@ -13,6 +13,8 @@ var pcam: PhantomCamera2D
 var main_spr: Sprite2D
 var times_used: int
 
+@export var action_type_array: Array[InputGuide.ActionType]
+
 var current_state: States:
 	set(value):
 		current_state = value
@@ -37,9 +39,10 @@ func change_state(new_state: States):
 			highlight(false)
 		States.WAITING:
 			highlight(true)
-			print(self, " is WAITING; hightligh is: ", action_exc.main_spr.get_instance_shader_parameter("enabled"))
+			SpaceshipEventBus.inter_waiting.emit()
 		States.ACTING:
 			highlight(false)
+			SpaceshipEventBus.inter_acting.emit(self)
 
 
 func _input(event: InputEvent) -> void:

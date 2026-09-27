@@ -10,8 +10,9 @@ enum ActionType {
 CONFIRM, RETURN, TELEPORT,
 MOVEMENT, IMPULSE, BREAK,
 AIM, SHOOT,
-POINT, CLICK, UI_MOVEMENT,
-SKIP, NEXT
+POINT, CLICK, UI_MOVEMENT, 
+SKIP, NEXT,
+CHANGE_ITEM, INTERACT, CHANGE_PAGE
 }
 
 # ICONS CONTROLER
@@ -35,6 +36,8 @@ const L_ANALOG: CompressedTexture2D = preload("res://sprites/ui/kenney_input/til
 
 const R_ANALOG: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0491.png")
 
+const L_ANALOG_HORIZONTAL: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0825.png")
+
 const D_PAD: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0034.png")
 
 # ICONS KEYBOARD
@@ -45,6 +48,8 @@ const X_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0
 const T_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0089.png")
 
 const WASD_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0816.png")
+
+const AD_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0824.png")
 
 const SHIFT_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0819.png")
 
@@ -110,7 +115,19 @@ const INPUT_ICONS: Dictionary = {
 	ActionType.NEXT : {
 		InputDevice.CONTROLLER: A_BUTTON,
 		InputDevice.KEYBOARD: SPACE_KEY
-	}
+	},
+	ActionType.CHANGE_ITEM : {
+		InputDevice.CONTROLLER: L_ANALOG_HORIZONTAL,
+		InputDevice.KEYBOARD: AD_KEY,
+	},
+	ActionType.INTERACT : {
+		InputDevice.CONTROLLER: A_BUTTON,
+		InputDevice.KEYBOARD: SPACE_KEY
+	},
+	ActionType.CHANGE_PAGE : {
+		InputDevice.CONTROLLER: L_ANALOG_HORIZONTAL,
+		InputDevice.KEYBOARD: AD_KEY,
+	},
 }
 
 # TEXT
@@ -127,7 +144,10 @@ const COMMON_ACTIONS: Dictionary = {
 	ActionType.CLICK: "Selecionar",
 	ActionType.UI_MOVEMENT: "Navegar UI",
 	ActionType.SKIP: "Ignorar",
-	ActionType.NEXT: "Avançar"
+	ActionType.NEXT: "Avançar",
+	ActionType.CHANGE_ITEM: "Trocar item",
+	ActionType.INTERACT: "Interagir",
+	ActionType.CHANGE_PAGE: "Trocar página"
 }
 
 @export var hidden_guide_array: Array[InputGuideUnit]
