@@ -2,7 +2,7 @@ class_name FocusOutCamera
 extends Node2D
 
 
-@export var camera: CutsceneCamera
+@export var camera: Camera2D
 
 @export var max_zoom_out: float = 0.35
 
