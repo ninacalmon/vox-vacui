@@ -27,6 +27,5 @@ func show_mouse():
 
 
 func hide_mouse():
-	print("timeout")
 	mouse_pos = get_viewport().get_mouse_position()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

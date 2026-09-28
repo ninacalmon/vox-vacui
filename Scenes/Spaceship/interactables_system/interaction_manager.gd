@@ -7,6 +7,7 @@ var inter_array: Array[Interactable]
 var current_inter: Interactable
 var current_inter_idx: int
 
+var changing_inter: bool = false
 
 func _ready() -> void:
 	for child in get_children():
@@ -20,14 +21,19 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not current_inter.current_state == current_inter.States.WAITING:
+	if changing_inter or not current_inter.current_state == current_inter.States.WAITING:
 		return
 	
 	if event.is_action_pressed("ui_left") and is_change_possible(current_inter_idx -1):
 		change_inter_to(current_inter_idx -1)
+		changing_inter = true
 
 	elif event.is_action_pressed("ui_right") and is_change_possible(current_inter_idx +1):
 		change_inter_to(current_inter_idx +1)
+		changing_inter = true
+
+	await get_tree().create_timer(0.2).timeout
+	changing_inter = false
 
 
 func is_change_possible(next_idx: int) -> bool:

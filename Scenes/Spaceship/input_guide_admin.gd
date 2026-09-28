@@ -23,6 +23,5 @@ func _on_inter_acting(inter: Interactable):
 
 
 func _on_inter_waiting():
-	print("waiting")
 	InputGuide.clear_guides()
 	show_default()

@@ -179,7 +179,7 @@ starting_idx = 2
 [node name="ExitDoorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-1335, 66)
 script = ExtResource("4_a6ffb")
-action_type_array = Array[int]([1, 0])
+action_type_array = [1, 0]
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ExitDoorInteractable"]
 position = Vector2(129, -8)
@@ -203,7 +203,7 @@ texture = SubResource("GradientTexture2D_npxme")
 position = Vector2(-935, 134)
 script = ExtResource("4_a6ffb")
 requires_energy = false
-action_type_array = Array[int]([1, 14])
+action_type_array = [1, 14]
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/ResourcesMachineInteractable"]
 position = Vector2(306, -126)
@@ -225,7 +225,7 @@ texture = SubResource("GradientTexture2D_iqcib")
 [node name="MonitorInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(-34, -29)
 script = ExtResource("4_a6ffb")
-action_type_array = Array[int]([1, 0, 10])
+action_type_array = [1, 0, 10]
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/MonitorInteractable"]
 script = ExtResource("5_54ay5")
@@ -248,7 +248,7 @@ texture = SubResource("GradientTexture2D_s2j2j")
 position = Vector2(942, -85)
 script = ExtResource("4_a6ffb")
 requires_energy = false
-action_type_array = Array[int]([14])
+action_type_array = [14]
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/LockedDoorInteractable"]
 position = Vector2(-14, 33)
@@ -264,7 +264,7 @@ z_index = -1
 [node name="DiaryInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(1044, 125)
 script = ExtResource("4_a6ffb")
-action_type_array = Array[int]([1, 15])
+action_type_array = [1, 15]
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/DiaryInteractable"]
 position = Vector2(4, -41)
@@ -287,7 +287,7 @@ texture = SubResource("GradientTexture2D_jx13q")
 [node name="PapersInteractable" type="Node2D" parent="InteractionManager"]
 position = Vector2(1333, -61)
 script = ExtResource("4_a6ffb")
-action_type_array = Array[int]([1])
+action_type_array = [1]
 
 [node name="PhantomCamera2D" type="Node2D" parent="InteractionManager/PapersInteractable"]
 position = Vector2(6, 9)
