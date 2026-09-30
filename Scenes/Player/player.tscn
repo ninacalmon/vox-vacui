@@ -176,8 +176,9 @@ owner_body = NodePath("..")
 [node name="CollisionShapeResources" type="CollisionShape2D" parent="ResourceCollector"]
 shape = SubResource("CircleShape2D_tx1dd")
 
-[node name="BulletShooter" type="Node2D" parent="."]
+[node name="BulletShooter" type="Node2D" parent="." node_paths=PackedStringArray("player_targeting")]
 script = ExtResource("11_pu2lt")
+player_targeting = NodePath("../PlayerTargeting")
 
 [node name="BulletSFX" type="AudioStreamPlayer" parent="BulletShooter"]
 stream = SubResource("AudioStreamRandomizer_7g0yx")
@@ -225,7 +226,6 @@ texture = ExtResource("21_h8ma5")
 [node name="TargetIndicator" type="Node2D" parent="."]
 visible = false
 script = ExtResource("23_jincj")
-color = Color(0.74658525, 2.0094587e-06, 8.663535e-07, 0.8)
 
 [node name="PlayerTargeting" type="Node2D" parent="." node_paths=PackedStringArray("target_indicator")]
 script = ExtResource("24_rqdc0")

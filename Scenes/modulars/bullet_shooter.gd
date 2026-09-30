@@ -17,6 +17,8 @@ var inverse_control_on: bool = false
 
 @onready var bullet_scene: PackedScene = load(StatsManager.player_current_bullet)
 
+@export var player_targeting: PlayerTargeting
+
 func _process(delta: float) -> void:
 	if Globals.is_cutscene:
 		return
@@ -27,6 +29,7 @@ func _process(delta: float) -> void:
 
 	handle_aim()
 	handle_aim_mouse()
+	handle_aim_lock()
 	handle_shoot()
 
 func handle_aim():
@@ -52,6 +55,14 @@ func handle_aim_mouse():
 	if cursor_dir.length() > 0.2:
 		aim_direction = cursor_dir.normalized()
 
+		arrow_pivot.rotation = aim_direction.angle()
+
+func handle_aim_lock():
+	if not is_instance_valid(player_targeting):
+		return
+
+	if is_instance_valid(player_targeting.current_target):
+		aim_direction = global_position.direction_to(player_targeting.current_target.global_position)
 		arrow_pivot.rotation = aim_direction.angle()
 
 func handle_shoot():

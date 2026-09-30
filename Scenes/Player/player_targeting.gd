@@ -1,10 +1,11 @@
+class_name PlayerTargeting
 extends Node2D
 
 @export var target_indicator: Node2D
 var current_target: Enemy = null
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("test_l"):
+	if Input.is_action_just_pressed("lock_target"):
 		handle_lock_input()
 
 	if is_instance_valid(current_target):
