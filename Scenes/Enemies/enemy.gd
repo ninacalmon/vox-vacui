@@ -26,3 +26,5 @@ extends RigidBody2D
 @onready var aggro_area: Area2D = $AggroArea
 
 @onready var attack_sfx: AudioStreamPlayer = $AttackSFX
+
+@onready var visible_notifier: VisibleOnScreenNotifier2D = $EnemyVisibleOnScreen

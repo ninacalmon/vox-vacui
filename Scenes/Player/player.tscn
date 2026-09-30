@@ -1,27 +1,29 @@
-[gd_scene load_steps=34 format=3 uid="uid://b512vj2a4a3y"]
+[gd_scene load_steps=36 format=3 uid="uid://b512vj2a4a3y"]
 
-[ext_resource type="Script" uid="uid://i7mc57eu0q83" path="res://scenes/player/player.gd" id="1_ktxno"]
-[ext_resource type="Texture2D" uid="uid://x6m3c8td5nfn" path="res://sprites/deimos/Deimos-Sheet.png" id="2_aqm4k"]
-[ext_resource type="PackedScene" uid="uid://bxmw37lsf71x1" path="res://scenes/modulars/gravitational_field.tscn" id="3_ikhnj"]
-[ext_resource type="Script" uid="uid://3bsd20l8onw4" path="res://scenes/player/player_sprite_control.gd" id="3_rcvs5"]
-[ext_resource type="Texture2D" uid="uid://smgygt1qu6gx" path="res://sprites/Backpack-Sheet.png" id="5_rcvs5"]
-[ext_resource type="Script" uid="uid://hrygf8oqcceo" path="res://scenes/player/line_trail.gd" id="6_jincj"]
+[ext_resource type="Script" uid="uid://i7mc57eu0q83" path="res://Scenes/Player/player.gd" id="1_ktxno"]
+[ext_resource type="Texture2D" uid="uid://x6m3c8td5nfn" path="res://Sprites/Deimos/Deimos-Sheet.png" id="2_aqm4k"]
+[ext_resource type="PackedScene" uid="uid://bxmw37lsf71x1" path="res://Scenes/modulars/gravitational_field.tscn" id="3_ikhnj"]
+[ext_resource type="Script" uid="uid://3bsd20l8onw4" path="res://Scenes/Player/player_sprite_control.gd" id="3_rcvs5"]
+[ext_resource type="Texture2D" uid="uid://smgygt1qu6gx" path="res://Sprites/Backpack-Sheet.png" id="5_rcvs5"]
+[ext_resource type="Script" uid="uid://hrygf8oqcceo" path="res://Scenes/Player/line_trail.gd" id="6_jincj"]
 [ext_resource type="AudioStream" uid="uid://cfoo2b2apjwmw" path="res://sound_effects/player/movement/fly1.mp3" id="7_3smsa"]
 [ext_resource type="AudioStream" uid="uid://cx2tfq2v41dbw" path="res://sound_effects/cutscenes/tech1.mp3" id="8_8erm5"]
 [ext_resource type="AudioStream" uid="uid://dtdp0p6eo6fco" path="res://sound_effects/player/movement/SFX_dash2.wav" id="9_dey5f"]
 [ext_resource type="AudioStream" uid="uid://b4ni1pu1osv1e" path="res://sound_effects/cutscenes/tech2.mp3" id="9_f1ek2"]
 [ext_resource type="AudioStream" uid="uid://bca5c33ek4yyw" path="res://sound_effects/player/movement/Sfx_dash_falhando (2).wav" id="11_eksi1"]
-[ext_resource type="Script" uid="uid://dsbdvxfei8u0x" path="res://scenes/modulars/resource_collector.gd" id="11_gymyn"]
-[ext_resource type="Script" uid="uid://cd5ihl6hfs16d" path="res://scenes/modulars/bullet_shooter.gd" id="11_pu2lt"]
-[ext_resource type="Script" uid="uid://yorcpoevwvbr" path="res://scenes/player/hurt_box_player.gd" id="13_7g0yx"]
+[ext_resource type="Script" uid="uid://dsbdvxfei8u0x" path="res://Scenes/modulars/resource_collector.gd" id="11_gymyn"]
+[ext_resource type="Script" uid="uid://cd5ihl6hfs16d" path="res://Scenes/modulars/bullet_shooter.gd" id="11_pu2lt"]
+[ext_resource type="Script" uid="uid://yorcpoevwvbr" path="res://Scenes/Player/hurt_box_player.gd" id="13_7g0yx"]
 [ext_resource type="AudioStream" uid="uid://bhajosbgqm8fk" path="res://sound_effects/shoot/sfx_tiro1.wav" id="13_dey5f"]
 [ext_resource type="AudioStream" uid="uid://dy3eobtygv1pq" path="res://sound_effects/shoot/sfx_tiro2.wav" id="14_r5xpd"]
 [ext_resource type="AudioStream" uid="uid://dw2sq44bp1kld" path="res://sound_effects/player/damage/sfx_dano3.wav" id="15_hnuln"]
-[ext_resource type="Script" uid="uid://c8vhfkoa08kcq" path="res://scenes/player/death_setup.gd" id="15_r5xpd"]
-[ext_resource type="PackedScene" uid="uid://cs3plu0tcpnyu" path="res://scenes/player/prtc_player_death.tscn" id="16_ks1b7"]
-[ext_resource type="Texture2D" uid="uid://c6csc1ns1bw6m" path="res://sprites/deimos/ShootingDrone2.png" id="17_jincj"]
+[ext_resource type="Script" uid="uid://c8vhfkoa08kcq" path="res://Scenes/Player/death_setup.gd" id="15_r5xpd"]
+[ext_resource type="PackedScene" uid="uid://cs3plu0tcpnyu" path="res://Scenes/Player/prtc_player_death.tscn" id="16_ks1b7"]
+[ext_resource type="Texture2D" uid="uid://c6csc1ns1bw6m" path="res://Sprites/Deimos/ShootingDrone2.png" id="17_jincj"]
 [ext_resource type="AudioStream" uid="uid://b4cbyqk77clli" path="res://sound_effects/player/sfx_morte1.wav" id="17_ks1b7"]
-[ext_resource type="Texture2D" uid="uid://biyu4g7rbmpx0" path="res://sprites/deimos/deimos_confused_popup.png" id="21_h8ma5"]
+[ext_resource type="Texture2D" uid="uid://biyu4g7rbmpx0" path="res://Sprites/Deimos/deimos_confused_popup.png" id="21_h8ma5"]
+[ext_resource type="Script" uid="uid://bdgftmisq7y0r" path="res://Scenes/UI/target_indicator.gd" id="23_jincj"]
+[ext_resource type="Script" uid="uid://dxry3jfm54yyw" path="res://Scenes/Player/player_targeting.gd" id="24_rqdc0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m0iey"]
 friction = 0.0
@@ -127,9 +129,9 @@ owner_collision_shape = NodePath("../CollisionShape2D")
 visible = false
 collision_layer = 2
 collision_mask = 2
+mass_to_radius_multiply = 14.0
 owner_body = NodePath("..")
 owner_collision_shape = NodePath("../CollisionShape2D")
-mass_to_radius_multiply = 14.0
 attraction_executed_multiply = 100.0
 
 [node name="Range" parent="GravitationalFieldResources" index="0"]
@@ -219,5 +221,14 @@ bus = &"Sound Effects"
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1, -23)
 texture = ExtResource("21_h8ma5")
+
+[node name="TargetIndicator" type="Node2D" parent="."]
+visible = false
+script = ExtResource("23_jincj")
+color = Color(0.74658525, 2.0094587e-06, 8.663535e-07, 0.8)
+
+[node name="PlayerTargeting" type="Node2D" parent="." node_paths=PackedStringArray("target_indicator")]
+script = ExtResource("24_rqdc0")
+target_indicator = NodePath("../TargetIndicator")
 
 [editable path="GravitationalFieldResources"]
