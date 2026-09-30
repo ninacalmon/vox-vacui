@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://cs7xq5woqx1js"]
+[gd_scene load_steps=36 format=4 uid="uid://cs7xq5woqx1js"]
 
 [ext_resource type="Texture2D" uid="uid://b4go5brbh3ndq" path="res://sprites/starfields/Starfield 1 - 1024x1024.png" id="1_w468r"]
 [ext_resource type="Texture2D" uid="uid://dxfs6gmq8441e" path="res://sprites/temporary_planets/temporary_planet_02.png" id="2_5luui"]
@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c44gjd053ibld" path="res://sprites/temporary_planets/temporary_planet_04.png" id="4_clwmq"]
 [ext_resource type="PackedScene" uid="uid://bjqibpfesudnp" path="res://scenes/space_bodies/planet_big1.tscn" id="5_d8g84"]
 [ext_resource type="PackedScene" uid="uid://b512vj2a4a3y" path="res://scenes/player/player.tscn" id="5_k6p3q"]
-[ext_resource type="Script" uid="uid://dw2m8ymjsljfq" path="res://scenes/ui/camera.gd" id="6_d8g84"]
+[ext_resource type="Script" uid="uid://dw2m8ymjsljfq" path="res://scenes/levels/space_levels/camera.gd" id="6_d8g84"]
 [ext_resource type="Script" uid="uid://ctwsp81gxl65g" path="res://scenes/modulars/camera_vibration.gd" id="7_k6p3q"]
 [ext_resource type="PackedScene" uid="uid://b60wc4xruimxc" path="res://scenes/spaceship/mothership.tscn" id="7_r78l7"]
 [ext_resource type="Texture2D" uid="uid://curwcau163khw" path="res://sprites/tileset.png" id="8_srdaq"]
+[ext_resource type="Script" uid="uid://2s7xsp42yc4x" path="res://scenes/levels/space_levels/focus_out_camera.gd" id="8_suwtj"]
 [ext_resource type="Script" uid="uid://bm2kpm32ooqhk" path="res://scenes/modulars/tile_map_generator.gd" id="9_4hc51"]
 [ext_resource type="PackedScene" uid="uid://dxg5doh1x8ch2" path="res://scenes/asteroids/asteroid_body/asteroid_small.tscn" id="10_yj5bc"]
 [ext_resource type="PackedScene" uid="uid://dsw810ysjgsn2" path="res://scenes/asteroids/asteroid_body/asteroid_medium.tscn" id="11_5sn37"]
@@ -117,6 +118,10 @@ full_view_pos = Vector2(0, -800)
 script = ExtResource("7_k6p3q")
 camera = NodePath("..")
 
+[node name="FocusOutCamera" type="Node2D" parent="P_Layer/Player/Camera2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("8_suwtj")
+camera = NodePath("..")
+
 [node name="Mothership" parent="." instance=ExtResource("7_r78l7")]
 position = Vector2(0, 190)
 
@@ -134,37 +139,37 @@ process_mode = 1
 position = Vector2(18, -1880)
 
 [node name="OrbitSPlanet" parent="MapGenerator/Sun3" instance=ExtResource("15_6c07g")]
-radius = 600.0
 initi_progress_ration = 0.034
+radius = 600.0
 body_scene = ExtResource("17_st3n8")
 
 [node name="OrbitMPlanet" parent="MapGenerator/Sun3" instance=ExtResource("15_6c07g")]
+initi_progress_ration = 0.432
 radius = 980.0
 speed = 30.0
 reverse = true
-initi_progress_ration = 0.432
 body_scene = ExtResource("16_a661v")
 
 [node name="OrbitMPlanet2" parent="MapGenerator/Sun3" instance=ExtResource("15_6c07g")]
+initi_progress_ration = 0.159
 radius = 1360.0
 point_count = 128
 speed = 70.0
-initi_progress_ration = 0.159
 body_scene = ExtResource("18_st3n8")
 
 [node name="OrbitSPlanet2" parent="MapGenerator/Sun3" instance=ExtResource("15_6c07g")]
+initi_progress_ration = 0.051
 radius = 1700.0
 point_count = 128
 speed = 100.0
-initi_progress_ration = 0.051
 body_scene = ExtResource("19_w468r")
 
 [node name="Orbit" parent="MapGenerator/Sun3" instance=ExtResource("15_6c07g")]
+initi_progress_ration = 0.793
 radius = 2560.0
 point_count = 80
 speed = 10.0
 reverse = true
-initi_progress_ration = 0.793
 body_scene = ExtResource("5_d8g84")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]

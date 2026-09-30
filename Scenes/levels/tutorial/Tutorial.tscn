@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhtobhw3p6586" path="res://sprites/temporary_planets/temporary_planet_03.png" id="4_8617h"]
 [ext_resource type="Texture2D" uid="uid://c44gjd053ibld" path="res://sprites/temporary_planets/temporary_planet_04.png" id="5_nwkth"]
 [ext_resource type="PackedScene" uid="uid://b512vj2a4a3y" path="res://scenes/player/player.tscn" id="6_ada67"]
-[ext_resource type="Script" uid="uid://dw2m8ymjsljfq" path="res://scenes/ui/camera.gd" id="7_ev6ts"]
+[ext_resource type="Script" uid="uid://dw2m8ymjsljfq" path="res://scenes/levels/space_levels/camera.gd" id="7_ev6ts"]
 [ext_resource type="PackedScene" uid="uid://b60wc4xruimxc" path="res://scenes/spaceship/mothership.tscn" id="8_2s7u0"]
 [ext_resource type="Script" uid="uid://ctwsp81gxl65g" path="res://scenes/modulars/camera_vibration.gd" id="8_jtkh7"]
 [ext_resource type="Texture2D" uid="uid://curwcau163khw" path="res://sprites/tileset.png" id="9_55wm2"]

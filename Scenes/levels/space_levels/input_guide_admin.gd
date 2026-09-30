@@ -34,6 +34,7 @@ func show_movement_guides():
 	InputGuide.show_guide(InputGuide.ActionType.MOVEMENT)
 	InputGuide.show_guide(InputGuide.ActionType.IMPULSE)
 	InputGuide.show_guide(InputGuide.ActionType.BREAK)
+	InputGuide.show_guide(InputGuide.ActionType.FOCUS_OUT)
 	if have_teleport:
 		InputGuide.show_guide(InputGuide.ActionType.TELEPORT)
 

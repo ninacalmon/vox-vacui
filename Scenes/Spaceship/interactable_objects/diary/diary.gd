@@ -65,8 +65,8 @@ func _open_book():
 
 func _close_book():
 	await _hide_book_ui()
-	await _play_close_animation()
 	HandsEventBus.book.emit(false)
+	await _play_close_animation()
 	_hide_blur()
 
 	_return_book()

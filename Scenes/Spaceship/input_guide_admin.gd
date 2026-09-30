@@ -1,34 +1,27 @@
 extends Node
 
+@export var interaction_manager: InteractionManager
+
 func _ready() -> void:
-	SpaceshipEventBus.focus_changed.connect(_on_focus_changed)
+	SpaceshipEventBus.inter_acting.connect(_on_inter_acting)
+	SpaceshipEventBus.inter_waiting.connect(_on_inter_waiting)
 	InputGuide.clear_guides()
 	show_default()
 
-func show_default():
-	InputGuide.show_guide(InputGuide.ActionType.CLICK)
-	InputGuide.show_guide(InputGuide.ActionType.POINT)
 
-func _on_focus_changed(focus: bool, subject: Node2D):
-	if focus:
-		if subject is ResourcesMachine:
-			InputGuide.clear_guides()
-			InputGuide.show_guide(InputGuide.ActionType.CLICK)
-			InputGuide.show_guide(InputGuide.ActionType.POINT)
-			InputGuide.show_guide(InputGuide.ActionType.RETURN)
-		elif subject is Monitor:
-			InputGuide.clear_guides()
-			InputGuide.show_guide(InputGuide.ActionType.UI_MOVEMENT)
-			InputGuide.show_guide(InputGuide.ActionType.CONFIRM)
-			InputGuide.show_guide(InputGuide.ActionType.RETURN)
-		elif subject is Diary:
-			InputGuide.clear_guides()
-			InputGuide.show_guide(InputGuide.ActionType.CLICK)
-			InputGuide.show_guide(InputGuide.ActionType.POINT)
-			InputGuide.show_guide(InputGuide.ActionType.RETURN)
-		elif subject is Papers:
-			InputGuide.clear_guides()
-			InputGuide.show_guide(InputGuide.ActionType.RETURN)
-	else:
-		InputGuide.clear_guides()
-		show_default()
+func show_default():
+	InputGuide.show_guide(InputGuide.ActionType.INTERACT)
+	InputGuide.show_guide(InputGuide.ActionType.CHANGE_ITEM)
+
+
+
+func _on_inter_acting(inter: Interactable):
+	InputGuide.clear_guides()
+
+	for at in inter.action_type_array:
+		InputGuide.show_guide(at)
+
+
+func _on_inter_waiting():
+	InputGuide.clear_guides()
+	show_default()
