@@ -11,6 +11,9 @@ func _process(_delta: float) -> void:
 	if is_instance_valid(current_target):
 		target_indicator.global_position = current_target.global_position
 
+		if current_target.visible_notifier.is_on_screen() == false:
+			set_target(get_nearest(get_visible_enemies()))
+
 #Find visible enemies
 func get_visible_enemies() -> Array:
 	var candidates: Array = []
