@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Planetas/PlanetaMaior.png"
+source_file="res://sprites/planetas/PlanetaMaior.png"
 dest_files=["res://.godot/imported/PlanetaMaior.png-43cf5886816be19e68e77453e9a310e8.ctex"]
 
 [params]

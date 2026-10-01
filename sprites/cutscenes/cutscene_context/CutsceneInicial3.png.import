@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Cutscenes/cutscene_context/CutsceneInicial3.png"
+source_file="res://sprites/cutscenes/cutscene_context/CutsceneInicial3.png"
 dest_files=["res://.godot/imported/CutsceneInicial3.png-a802b77ffafe1b92a0d5deb190cd9e3e.ctex"]
 
 [params]

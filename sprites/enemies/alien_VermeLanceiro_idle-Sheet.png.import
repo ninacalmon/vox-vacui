@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Enemies/alien_VermeLanceiro_idle-Sheet.png"
+source_file="res://sprites/enemies/alien_VermeLanceiro_idle-Sheet.png"
 dest_files=["res://.godot/imported/alien_VermeLanceiro_idle-Sheet.png-aa400617b7695bc6d5a1e3edfb25a23d.ctex"]
 
 [params]

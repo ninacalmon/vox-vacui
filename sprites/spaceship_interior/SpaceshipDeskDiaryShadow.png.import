@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/spaceship_interior/SpaceshipDeskDiaryShadow.png"
+source_file="res://sprites/spaceship_interior/SpaceshipDeskDiaryShadow.png"
 dest_files=["res://.godot/imported/SpaceshipDeskDiaryShadow.png-c8cd825a60f4efd9b75e19718fe4aa43.ctex"]
 
 [params]

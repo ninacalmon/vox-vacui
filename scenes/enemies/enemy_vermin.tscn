@@ -1,13 +1,13 @@
 [gd_scene load_steps=23 format=3 uid="uid://8f0m410ylbbe"]
 
-[ext_resource type="Script" uid="uid://dtkhiaas5anjp" path="res://Scenes/Enemies/enemy_vermin.gd" id="1_k0yb4"]
-[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://Shaders/inflation.gdshader" id="2_adcwm"]
-[ext_resource type="Script" uid="uid://iatwgk3de1nj" path="res://Scenes/modulars/hurt_box.gd" id="3_adcwm"]
-[ext_resource type="Texture2D" uid="uid://cg2tw8gmr2f1s" path="res://Sprites/Enemies/alien_VermeLanceiro_idle-Sheet.png" id="3_x66mb"]
+[ext_resource type="Script" uid="uid://dtkhiaas5anjp" path="res://scenes/enemies/enemy_vermin.gd" id="1_k0yb4"]
+[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://shaders/inflation.gdshader" id="2_adcwm"]
+[ext_resource type="Script" uid="uid://iatwgk3de1nj" path="res://scenes/modulars/hurt_box.gd" id="3_adcwm"]
+[ext_resource type="Texture2D" uid="uid://cg2tw8gmr2f1s" path="res://sprites/enemies/alien_VermeLanceiro_idle-Sheet.png" id="3_x66mb"]
 [ext_resource type="AudioStream" uid="uid://7lu32wsorlh5" path="res://sound_effects/enemies/sfx_inimigosBasic.wav" id="4_x66mb"]
 [ext_resource type="AudioStream" uid="uid://6nqgebd8dtyr" path="res://sound_effects/enemies/sfx_inimigosBasic (2).wav" id="5_1lrlx"]
 [ext_resource type="AudioStream" uid="uid://bkpogun2por27" path="res://sound_effects/enemies/sfx_enemy_attack.mp3" id="6_oaun8"]
-[ext_resource type="Script" uid="uid://e5cfbq8jk5j5" path="res://Scenes/Enemies/enemy_visible_on_screen.gd" id="7_0ktlt"]
+[ext_resource type="Script" uid="uid://e5cfbq8jk5j5" path="res://scenes/enemies/enemy_visible_on_screen.gd" id="7_0ktlt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
 radius = 15.0

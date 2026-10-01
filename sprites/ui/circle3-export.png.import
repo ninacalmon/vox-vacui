@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/circle3-export.png"
+source_file="res://sprites/ui/circle3-export.png"
 dest_files=["res://.godot/imported/circle3-export.png-72aedd99525ef058bb359ea6511b53da.ctex"]
 
 [params]

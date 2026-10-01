@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://npl3mumy4crf"]
 
-[ext_resource type="FontFile" uid="uid://bkq3re32v3glf" path="res://Fonts/commodore_pixelized_v1_2.ttf" id="1_cr1n0"]
+[ext_resource type="FontFile" uid="uid://bkq3re32v3glf" path="res://fonts/commodore_pixelized_v1_2.ttf" id="1_cr1n0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cr1n0"]
 

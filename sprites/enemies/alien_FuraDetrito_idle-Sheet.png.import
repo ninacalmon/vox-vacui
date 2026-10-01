@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Enemies/alien_FuraDetrito_idle-Sheet.png"
+source_file="res://sprites/enemies/alien_FuraDetrito_idle-Sheet.png"
 dest_files=["res://.godot/imported/alien_FuraDetrito_idle-Sheet.png-5d65cb4a0589f16ae274f63941997d6a.ctex"]
 
 [params]

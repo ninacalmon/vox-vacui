@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Enemies/RegularShot.png"
+source_file="res://sprites/enemies/RegularShot.png"
 dest_files=["res://.godot/imported/RegularShot.png-7693782ef786fabf164e5cc97f81e833.ctex"]
 
 [params]

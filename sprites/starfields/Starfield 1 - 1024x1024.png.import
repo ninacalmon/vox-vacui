@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Starfields/Starfield 1 - 1024x1024.png"
+source_file="res://sprites/starfields/Starfield 1 - 1024x1024.png"
 dest_files=["res://.godot/imported/Starfield 1 - 1024x1024.png-48d0404e1a69873ea48e7520f9947fca.ctex"]
 
 [params]

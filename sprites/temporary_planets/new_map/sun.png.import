@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/temporary_planets/new_map/sun.png"
+source_file="res://sprites/temporary_planets/new_map/sun.png"
 dest_files=["res://.godot/imported/sun.png-1ca9957969a9623f283093825fb4f3fe.ctex"]
 
 [params]

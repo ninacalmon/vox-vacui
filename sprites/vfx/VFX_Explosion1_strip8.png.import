@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/VFX/VFX_Explosion1_strip8.png"
+source_file="res://sprites/vfx/VFX_Explosion1_strip8.png"
 dest_files=["res://.godot/imported/VFX_Explosion1_strip8.png-ce8c9319d323f47d08384dff9293044d.ctex"]
 
 [params]

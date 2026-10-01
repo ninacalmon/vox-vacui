@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Explosion_Sheet.png"
+source_file="res://sprites/Explosion_Sheet.png"
 dest_files=["res://.godot/imported/Explosion_Sheet.png-f290b991a3b41cecd819e7cd9d8acf20.ctex"]
 
 [params]

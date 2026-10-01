@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Deimos/deimos_confused_popup.png"
+source_file="res://sprites/deimos/deimos_confused_popup.png"
 dest_files=["res://.godot/imported/deimos_confused_popup.png-3c4ccf6c75064efec6ba65c0b38b333a.ctex"]
 
 [params]

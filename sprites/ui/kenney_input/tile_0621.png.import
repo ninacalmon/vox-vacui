@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input/tile_0621.png"
+source_file="res://sprites/ui/kenney_input/tile_0621.png"
 dest_files=["res://.godot/imported/tile_0621.png-915e547270429aec0f5d14f6fea85de5.ctex"]
 
 [params]

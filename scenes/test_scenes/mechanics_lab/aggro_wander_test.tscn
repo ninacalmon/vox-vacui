@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://cggwmku71hinx"]
 
-[ext_resource type="PackedScene" uid="uid://b512vj2a4a3y" path="res://Scenes/Player/player.tscn" id="1_sqyrr"]
-[ext_resource type="PackedScene" uid="uid://br070cnq6sve" path="res://Scenes/Enemies/enemy_basic.tscn" id="2_5nq3d"]
-[ext_resource type="PackedScene" uid="uid://bpy311ttuke1b" path="res://Scenes/Enemies/enemy_larvae.tscn" id="3_jcgap"]
-[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://Shaders/inflation.gdshader" id="3_nmcsa"]
-[ext_resource type="PackedScene" uid="uid://8f0m410ylbbe" path="res://Scenes/Enemies/enemy_vermin.tscn" id="4_lobh4"]
-[ext_resource type="Texture2D" uid="uid://b4go5brbh3ndq" path="res://Sprites/Starfields/Starfield 1 - 1024x1024.png" id="5_ncclw"]
-[ext_resource type="Texture2D" uid="uid://dxfs6gmq8441e" path="res://Sprites/temporary_planets/temporary_planet_02.png" id="6_nmcsa"]
-[ext_resource type="Texture2D" uid="uid://dhtobhw3p6586" path="res://Sprites/temporary_planets/temporary_planet_03.png" id="7_rlahj"]
-[ext_resource type="Texture2D" uid="uid://c44gjd053ibld" path="res://Sprites/temporary_planets/temporary_planet_04.png" id="8_opole"]
+[ext_resource type="PackedScene" uid="uid://b512vj2a4a3y" path="res://scenes/player/player.tscn" id="1_sqyrr"]
+[ext_resource type="PackedScene" uid="uid://br070cnq6sve" path="res://scenes/enemies/enemy_basic.tscn" id="2_5nq3d"]
+[ext_resource type="PackedScene" uid="uid://bpy311ttuke1b" path="res://scenes/enemies/enemy_larvae.tscn" id="3_jcgap"]
+[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://shaders/inflation.gdshader" id="3_nmcsa"]
+[ext_resource type="PackedScene" uid="uid://8f0m410ylbbe" path="res://scenes/enemies/enemy_vermin.tscn" id="4_lobh4"]
+[ext_resource type="Texture2D" uid="uid://b4go5brbh3ndq" path="res://sprites/starfields/Starfield 1 - 1024x1024.png" id="5_ncclw"]
+[ext_resource type="Texture2D" uid="uid://dxfs6gmq8441e" path="res://sprites/temporary_planets/temporary_planet_02.png" id="6_nmcsa"]
+[ext_resource type="Texture2D" uid="uid://dhtobhw3p6586" path="res://sprites/temporary_planets/temporary_planet_03.png" id="7_rlahj"]
+[ext_resource type="Texture2D" uid="uid://c44gjd053ibld" path="res://sprites/temporary_planets/temporary_planet_04.png" id="8_opole"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rlahj"]
 resource_local_to_scene = true

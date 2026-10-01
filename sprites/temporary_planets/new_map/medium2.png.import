@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/temporary_planets/new_map/medium2.png"
+source_file="res://sprites/temporary_planets/new_map/medium2.png"
 dest_files=["res://.godot/imported/medium2.png-928da69de9538fe3d77d45c8e5bb7eb7.ctex"]
 
 [params]

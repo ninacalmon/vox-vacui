@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Black_hole.png"
+source_file="res://sprites/Black_hole.png"
 dest_files=["res://.godot/imported/Black_hole.png-fd74c19f5586dbd4d71f5e593e348800.ctex"]
 
 [params]

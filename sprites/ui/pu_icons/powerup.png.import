@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/pu_icons/powerup.png"
+source_file="res://sprites/ui/pu_icons/powerup.png"
 dest_files=["res://.godot/imported/powerup.png-48e54eca3ae41e4e0c7fe85d0b277b29.ctex"]
 
 [params]

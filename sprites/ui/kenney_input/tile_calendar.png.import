@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input/tile_calendar.png"
+source_file="res://sprites/ui/kenney_input/tile_calendar.png"
 dest_files=["res://.godot/imported/tile_calendar.png-0ada1db7be08ab1fef2701111fbddcc7.ctex"]
 
 [params]

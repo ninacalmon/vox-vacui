@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Planetas/moon_2.png"
+source_file="res://sprites/planetas/moon_2.png"
 dest_files=["res://.godot/imported/moon_2.png-c5a7f8529127e230b9c44436889d2d11.ctex"]
 
 [params]

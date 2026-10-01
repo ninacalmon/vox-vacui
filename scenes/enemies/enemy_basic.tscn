@@ -1,13 +1,13 @@
 [gd_scene load_steps=24 format=3 uid="uid://br070cnq6sve"]
 
-[ext_resource type="Script" uid="uid://7afwh36bc151" path="res://Scenes/Enemies/enemy_basic.gd" id="1_eog5f"]
-[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://Shaders/inflation.gdshader" id="2_ry8es"]
-[ext_resource type="Texture2D" uid="uid://3pnsx5o7lss8" path="res://Sprites/Enemies/alien_FuraDetrito_idle-Sheet.png" id="3_c17sm"]
-[ext_resource type="Script" uid="uid://iatwgk3de1nj" path="res://Scenes/modulars/hurt_box.gd" id="3_ry8es"]
+[ext_resource type="Script" uid="uid://7afwh36bc151" path="res://scenes/enemies/enemy_basic.gd" id="1_eog5f"]
+[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://shaders/inflation.gdshader" id="2_ry8es"]
+[ext_resource type="Texture2D" uid="uid://3pnsx5o7lss8" path="res://sprites/enemies/alien_FuraDetrito_idle-Sheet.png" id="3_c17sm"]
+[ext_resource type="Script" uid="uid://iatwgk3de1nj" path="res://scenes/modulars/hurt_box.gd" id="3_ry8es"]
 [ext_resource type="AudioStream" uid="uid://7lu32wsorlh5" path="res://sound_effects/enemies/sfx_inimigosBasic.wav" id="4_c17sm"]
 [ext_resource type="AudioStream" uid="uid://6nqgebd8dtyr" path="res://sound_effects/enemies/sfx_inimigosBasic (2).wav" id="5_2mprn"]
 [ext_resource type="AudioStream" uid="uid://bkpogun2por27" path="res://sound_effects/enemies/sfx_enemy_attack.mp3" id="6_50j16"]
-[ext_resource type="Script" uid="uid://e5cfbq8jk5j5" path="res://Scenes/Enemies/enemy_visible_on_screen.gd" id="7_ldqpc"]
+[ext_resource type="Script" uid="uid://e5cfbq8jk5j5" path="res://scenes/enemies/enemy_visible_on_screen.gd" id="7_ldqpc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
 radius = 15.0

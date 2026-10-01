@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Deimos/ShootingDrone2.png"
+source_file="res://sprites/deimos/ShootingDrone2.png"
 dest_files=["res://.godot/imported/ShootingDrone2.png-13f62f6b95dd1660b54e53ed196b55cf.ctex"]
 
 [params]

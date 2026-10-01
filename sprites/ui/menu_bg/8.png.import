@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/menu_bg/8.png"
+source_file="res://sprites/ui/menu_bg/8.png"
 dest_files=["res://.godot/imported/8.png-fe36d6c4b644890082cc2f4495d1c477.ctex"]
 
 [params]

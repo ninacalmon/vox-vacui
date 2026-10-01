@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Backpack-Sheet.png"
+source_file="res://sprites/Backpack-Sheet.png"
 dest_files=["res://.godot/imported/Backpack-Sheet.png-9d46f3c2b1071a3c6de907629e0be730.ctex"]
 
 [params]

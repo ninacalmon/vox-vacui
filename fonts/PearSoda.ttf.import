@@ -7,7 +7,7 @@ path="res://.godot/imported/PearSoda.ttf-093b9a35436a7bac63ff2c2b19dc4249.fontda
 
 [deps]
 
-source_file="res://Fonts/PearSoda.ttf"
+source_file="res://fonts/PearSoda.ttf"
 dest_files=["res://.godot/imported/PearSoda.ttf-093b9a35436a7bac63ff2c2b19dc4249.fontdata"]
 
 [params]

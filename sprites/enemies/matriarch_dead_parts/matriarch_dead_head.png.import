@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Enemies/matriarch_dead_parts/matriarch_dead_head.png"
+source_file="res://sprites/enemies/matriarch_dead_parts/matriarch_dead_head.png"
 dest_files=["res://.godot/imported/matriarch_dead_head.png-25fda5c5d7826a452dc3c1f057553c10.ctex"]
 
 [params]

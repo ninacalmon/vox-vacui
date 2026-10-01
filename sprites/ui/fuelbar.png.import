@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/fuelbar.png"
+source_file="res://sprites/ui/fuelbar.png"
 dest_files=["res://.godot/imported/fuelbar.png-c95dc2877523123febd1599ee24c2c35.ctex"]
 
 [params]

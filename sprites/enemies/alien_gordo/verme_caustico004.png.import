@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Enemies/alien_gordo/verme_caustico004.png"
+source_file="res://sprites/enemies/alien_gordo/verme_caustico004.png"
 dest_files=["res://.godot/imported/verme_caustico004.png-4434987f2a8cad568c20ee3c657a815c.ctex"]
 
 [params]

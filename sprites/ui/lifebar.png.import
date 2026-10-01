@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/lifebar.png"
+source_file="res://sprites/ui/lifebar.png"
 dest_files=["res://.godot/imported/lifebar.png-1f43623dd34f4d907fb5206dbf23fc21.ctex"]
 
 [params]

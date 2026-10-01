@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Asteroids/Asteroid_medium_damaged1.png"
+source_file="res://sprites/asteroids/Asteroid_medium_damaged1.png"
 dest_files=["res://.godot/imported/Asteroid_medium_damaged1.png-40b250c51e38ac28e911730f362f5a15.ctex"]
 
 [params]

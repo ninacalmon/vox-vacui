@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/deimos_hands/meleca/IMG_4479.PNG"
+source_file="res://sprites/deimos_hands/meleca/IMG_4479.PNG"
 dest_files=["res://.godot/imported/IMG_4479.PNG-58ded9da8fbde1ce0f93e5dccb06857d.ctex"]
 
 [params]

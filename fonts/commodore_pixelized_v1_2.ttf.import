@@ -7,7 +7,7 @@ path="res://.godot/imported/commodore_pixelized_v1_2.ttf-1d90bcb6a7ce62ae37ad247
 
 [deps]
 
-source_file="res://Fonts/commodore_pixelized_v1_2.ttf"
+source_file="res://fonts/commodore_pixelized_v1_2.ttf"
 dest_files=["res://.godot/imported/commodore_pixelized_v1_2.ttf-1d90bcb6a7ce62ae37ad247fc5b3c9e2.fontdata"]
 
 [params]

@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/background_legacy.png"
+source_file="res://sprites/background_legacy.png"
 dest_files=["res://.godot/imported/background_legacy.png-2487379e1318b498de37a40013ba25b3.ctex"]
 
 [params]

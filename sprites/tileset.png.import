@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/tileset.png"
+source_file="res://sprites/tileset.png"
 dest_files=["res://.godot/imported/tileset.png-c259079e18121438fd392d302e3ca0d5.ctex"]
 
 [params]

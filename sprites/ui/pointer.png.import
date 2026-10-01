@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/UI/pointer.png"
+source_file="res://sprites/ui/pointer.png"
 dest_files=["res://.godot/imported/pointer.png-e856736a637f41ddfa01e6c620335d4b.ctex"]
 
 [params]
