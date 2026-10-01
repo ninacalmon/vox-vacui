@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dipdl5jh2vvbx"
-path="res://.godot/imported/tile_0820.png-f84848bc7e9f83eb1a490b47caff6bef.ctex"
+path="res://.godot/imported/tile_0820.png-811841e36d9d850b614f9e39b4f5d0e4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/ui/kenney_input/tile_0820.png"
-dest_files=["res://.godot/imported/tile_0820.png-f84848bc7e9f83eb1a490b47caff6bef.ctex"]
+dest_files=["res://.godot/imported/tile_0820.png-811841e36d9d850b614f9e39b4f5d0e4.ctex"]
 
 [params]
 

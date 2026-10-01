@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nufx44r3we8u"
-path="res://.godot/imported/powerup2.png-af4c1ffc6558ff9b1d015a70e363fa76.ctex"
+path="res://.godot/imported/powerup2.png-afe9278b66ad9030735056b7ac1a37a2.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/ui/pu_icons/powerup2.png"
-dest_files=["res://.godot/imported/powerup2.png-af4c1ffc6558ff9b1d015a70e363fa76.ctex"]
+dest_files=["res://.godot/imported/powerup2.png-afe9278b66ad9030735056b7ac1a37a2.ctex"]
 
 [params]
 

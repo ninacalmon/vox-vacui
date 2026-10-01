@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgc2a51wevbrs"
-path="res://.godot/imported/SpaceshipMonitorButton.png-a15f6df741dcafd3d73d582364013ec9.ctex"
+path="res://.godot/imported/SpaceshipMonitorButton.png-a078092bb80ef1760c940c956ef5b6b7.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/spaceship_interior/SpaceshipMonitorButton.png"
-dest_files=["res://.godot/imported/SpaceshipMonitorButton.png-a15f6df741dcafd3d73d582364013ec9.ctex"]
+dest_files=["res://.godot/imported/SpaceshipMonitorButton.png-a078092bb80ef1760c940c956ef5b6b7.ctex"]
 
 [params]
 

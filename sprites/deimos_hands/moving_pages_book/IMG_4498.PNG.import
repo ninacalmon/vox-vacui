@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p1ig5h8l3fu7"
-path="res://.godot/imported/IMG_4498.PNG-37788382fc863ea70c803c0f2234f7b3.ctex"
+path="res://.godot/imported/IMG_4498.PNG-73e0f122643e89ede242d58170a4b85f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/deimos_hands/moving_pages_book/IMG_4498.PNG"
-dest_files=["res://.godot/imported/IMG_4498.PNG-37788382fc863ea70c803c0f2234f7b3.ctex"]
+dest_files=["res://.godot/imported/IMG_4498.PNG-73e0f122643e89ede242d58170a4b85f.ctex"]
 
 [params]
 

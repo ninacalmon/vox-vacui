@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cll7tsor421r2"
-path="res://.godot/imported/IMG_4439.PNG-2d4769ca15ddd69c9d47cc544ccfccfd.ctex"
+path="res://.godot/imported/IMG_4439.PNG-28e094ba57514786c2be3659017309a4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/deimos_hands/nananinanao/IMG_4439.PNG"
-dest_files=["res://.godot/imported/IMG_4439.PNG-2d4769ca15ddd69c9d47cc544ccfccfd.ctex"]
+dest_files=["res://.godot/imported/IMG_4439.PNG-28e094ba57514786c2be3659017309a4.ctex"]
 
 [params]
 

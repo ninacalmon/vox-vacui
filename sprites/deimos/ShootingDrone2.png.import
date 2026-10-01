@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6csc1ns1bw6m"
-path="res://.godot/imported/ShootingDrone2.png-13f62f6b95dd1660b54e53ed196b55cf.ctex"
+path="res://.godot/imported/ShootingDrone2.png-381223ef31cb59a8b34ae0877bbdb15d.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/deimos/ShootingDrone2.png"
-dest_files=["res://.godot/imported/ShootingDrone2.png-13f62f6b95dd1660b54e53ed196b55cf.ctex"]
+dest_files=["res://.godot/imported/ShootingDrone2.png-381223ef31cb59a8b34ae0877bbdb15d.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8dkkdo0vx877"
-path="res://.godot/imported/CutsceneInicial2.png-082b40b25217ed0c4a8a9b0c2265e23f.ctex"
+path="res://.godot/imported/CutsceneInicial2.png-3a13310895b0d380664523f1d195845b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/cutscenes/cutscene_context/CutsceneInicial2.png"
-dest_files=["res://.godot/imported/CutsceneInicial2.png-082b40b25217ed0c4a8a9b0c2265e23f.ctex"]
+dest_files=["res://.godot/imported/CutsceneInicial2.png-3a13310895b0d380664523f1d195845b.ctex"]
 
 [params]
 

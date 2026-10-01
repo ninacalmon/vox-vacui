@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bppl2cceeh7o0"
-path="res://.godot/imported/SpaceshipBoss.png-5be641dafdf383a43e7134eecf5e5408.ctex"
+path="res://.godot/imported/SpaceshipBoss.png-6fdfbc28299943f54038dd6ebe375c39.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/spaceship_interior/SpaceshipBoss.png"
-dest_files=["res://.godot/imported/SpaceshipBoss.png-5be641dafdf383a43e7134eecf5e5408.ctex"]
+dest_files=["res://.godot/imported/SpaceshipBoss.png-6fdfbc28299943f54038dd6ebe375c39.ctex"]
 
 [params]
 

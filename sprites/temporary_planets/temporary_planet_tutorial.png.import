@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xuvojlr8s030"
-path="res://.godot/imported/temporary_planet_tutorial.png-8a51907441bd34e6212fe47c9436d865.ctex"
+path="res://.godot/imported/temporary_planet_tutorial.png-7cdfb2353232ac4786e3d3fb9b7c0211.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/temporary_planets/temporary_planet_tutorial.png"
-dest_files=["res://.godot/imported/temporary_planet_tutorial.png-8a51907441bd34e6212fe47c9436d865.ctex"]
+dest_files=["res://.godot/imported/temporary_planet_tutorial.png-7cdfb2353232ac4786e3d3fb9b7c0211.ctex"]
 
 [params]
 

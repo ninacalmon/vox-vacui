@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv75432b5i0ny"
-path="res://.godot/imported/PlanetaMaior.png-43cf5886816be19e68e77453e9a310e8.ctex"
+path="res://.godot/imported/PlanetaMaior.png-50464ec00f8dcf6a033e4e4b6721250b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/planetas/PlanetaMaior.png"
-dest_files=["res://.godot/imported/PlanetaMaior.png-43cf5886816be19e68e77453e9a310e8.ctex"]
+dest_files=["res://.godot/imported/PlanetaMaior.png-50464ec00f8dcf6a033e4e4b6721250b.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caoviohaas4nb"
-path="res://.godot/imported/Asteroid_big_damaged2.png-da53fb0f90c6cc6a509e802430db9fea.ctex"
+path="res://.godot/imported/Asteroid_big_damaged2.png-09c4d55a914b8c3493088b7015db9e5a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/asteroids/Asteroid_big_damaged2.png"
-dest_files=["res://.godot/imported/Asteroid_big_damaged2.png-da53fb0f90c6cc6a509e802430db9fea.ctex"]
+dest_files=["res://.godot/imported/Asteroid_big_damaged2.png-09c4d55a914b8c3493088b7015db9e5a.ctex"]
 
 [params]
 

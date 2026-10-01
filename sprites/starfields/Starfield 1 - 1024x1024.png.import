@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4go5brbh3ndq"
-path="res://.godot/imported/Starfield 1 - 1024x1024.png-48d0404e1a69873ea48e7520f9947fca.ctex"
+path="res://.godot/imported/Starfield 1 - 1024x1024.png-3f7d157d050f987fc7acca9bbdff3b8d.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/starfields/Starfield 1 - 1024x1024.png"
-dest_files=["res://.godot/imported/Starfield 1 - 1024x1024.png-48d0404e1a69873ea48e7520f9947fca.ctex"]
+dest_files=["res://.godot/imported/Starfield 1 - 1024x1024.png-3f7d157d050f987fc7acca9bbdff3b8d.ctex"]
 
 [params]
 

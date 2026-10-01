@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btlh368ocesjr"
-path="res://.godot/imported/Idle1.PNG-1243d51513dcca156d731195f979c9d7.ctex"
+path="res://.godot/imported/Idle1.PNG-6c740c272b72fa51702d62c2b7361a31.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/deimos_hands/idle/Idle1.PNG"
-dest_files=["res://.godot/imported/Idle1.PNG-1243d51513dcca156d731195f979c9d7.ctex"]
+dest_files=["res://.godot/imported/Idle1.PNG-6c740c272b72fa51702d62c2b7361a31.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2u7qp652np30"
-path="res://.godot/imported/IMG_4426.PNG-1ac921cf3c16003f002b61d70aa2ac40.ctex"
+path="res://.godot/imported/IMG_4426.PNG-4ea4b018b5a7c8ccc1aa931806ccd32f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/deimos_hands/machine_button/IMG_4426.PNG"
-dest_files=["res://.godot/imported/IMG_4426.PNG-1ac921cf3c16003f002b61d70aa2ac40.ctex"]
+dest_files=["res://.godot/imported/IMG_4426.PNG-4ea4b018b5a7c8ccc1aa931806ccd32f.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkkq0nmsmhr5w"
-path="res://.godot/imported/planet_small_2.png-2483db9f135b917ac7ef85b8b4497b14.ctex"
+path="res://.godot/imported/planet_small_2.png-c4fc803b40228f73a7c658f402aa0a34.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/planetas/planet_small_2.png"
-dest_files=["res://.godot/imported/planet_small_2.png-2483db9f135b917ac7ef85b8b4497b14.ctex"]
+dest_files=["res://.godot/imported/planet_small_2.png-c4fc803b40228f73a7c658f402aa0a34.ctex"]
 
 [params]
 

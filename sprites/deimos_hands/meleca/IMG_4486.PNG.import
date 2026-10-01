@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccqguk3iynnky"
-path="res://.godot/imported/IMG_4486.PNG-8c9fbe8f8a97b73ccdb3ad9a78b0fde1.ctex"
+path="res://.godot/imported/IMG_4486.PNG-0d4b7f60472a0ae51704843273151b86.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/deimos_hands/meleca/IMG_4486.PNG"
-dest_files=["res://.godot/imported/IMG_4486.PNG-8c9fbe8f8a97b73ccdb3ad9a78b0fde1.ctex"]
+dest_files=["res://.godot/imported/IMG_4486.PNG-0d4b7f60472a0ae51704843273151b86.ctex"]
 
 [params]
 

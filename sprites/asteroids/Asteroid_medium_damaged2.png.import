@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bustky8pwgcl0"
-path="res://.godot/imported/Asteroid_medium_damaged2.png-9433fd4475f1755ad4788369b3d021ca.ctex"
+path="res://.godot/imported/Asteroid_medium_damaged2.png-68be7fb95ecdce5899948576a1452358.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/asteroids/Asteroid_medium_damaged2.png"
-dest_files=["res://.godot/imported/Asteroid_medium_damaged2.png-9433fd4475f1755ad4788369b3d021ca.ctex"]
+dest_files=["res://.godot/imported/Asteroid_medium_damaged2.png-68be7fb95ecdce5899948576a1452358.ctex"]
 
 [params]
 

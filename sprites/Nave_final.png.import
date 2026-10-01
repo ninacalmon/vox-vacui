@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cemdt5xxynwgc"
-path="res://.godot/imported/Nave_final.png-6ec00127efb805d0fafa5e4f4fccabe2.ctex"
+path="res://.godot/imported/Nave_final.png-f43e036b3fd9451e45eb9932b8310370.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/Nave_final.png"
-dest_files=["res://.godot/imported/Nave_final.png-6ec00127efb805d0fafa5e4f4fccabe2.ctex"]
+dest_files=["res://.godot/imported/Nave_final.png-f43e036b3fd9451e45eb9932b8310370.ctex"]
 
 [params]
 

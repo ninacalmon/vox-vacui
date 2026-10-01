@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj6xygqld8q82"
-path="res://.godot/imported/verme_caustico003.png-d2a7cc5a9840a6829d16d56f593f2664.ctex"
+path="res://.godot/imported/verme_caustico003.png-3c6e53a295cf77e6d58cdc912aef1c3c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/enemies/alien_gordo/verme_caustico003.png"
-dest_files=["res://.godot/imported/verme_caustico003.png-d2a7cc5a9840a6829d16d56f593f2664.ctex"]
+dest_files=["res://.godot/imported/verme_caustico003.png-3c6e53a295cf77e6d58cdc912aef1c3c.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c37dul0guky5m"
-path="res://.godot/imported/SpaceshipPapersV2.png-4e67ba3ef56c962b008b2224bac26fa5.ctex"
+path="res://.godot/imported/SpaceshipPapersV2.png-2ee7ea447f351ab7fef2b686b797cf43.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/spaceship_interior/SpaceshipPapersV2.png"
-dest_files=["res://.godot/imported/SpaceshipPapersV2.png-4e67ba3ef56c962b008b2224bac26fa5.ctex"]
+dest_files=["res://.godot/imported/SpaceshipPapersV2.png-2ee7ea447f351ab7fef2b686b797cf43.ctex"]
 
 [params]
 

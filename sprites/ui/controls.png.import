@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tumvrrknvrfb"
-path="res://.godot/imported/controls.png-22a49be32fd4ed087f2fe7ab0a8aca63.ctex"
+path="res://.godot/imported/controls.png-d04599f4ccaa43670f2fb3ff1eb8a550.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/ui/controls.png"
-dest_files=["res://.godot/imported/controls.png-22a49be32fd4ed087f2fe7ab0a8aca63.ctex"]
+dest_files=["res://.godot/imported/controls.png-d04599f4ccaa43670f2fb3ff1eb8a550.ctex"]
 
 [params]
 

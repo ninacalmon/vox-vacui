@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg2tw8gmr2f1s"
-path="res://.godot/imported/alien_VermeLanceiro_idle-Sheet.png-aa400617b7695bc6d5a1e3edfb25a23d.ctex"
+path="res://.godot/imported/alien_VermeLanceiro_idle-Sheet.png-6d2427678a552e5fa25ebbf82bacdf11.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/enemies/alien_VermeLanceiro_idle-Sheet.png"
-dest_files=["res://.godot/imported/alien_VermeLanceiro_idle-Sheet.png-aa400617b7695bc6d5a1e3edfb25a23d.ctex"]
+dest_files=["res://.godot/imported/alien_VermeLanceiro_idle-Sheet.png-6d2427678a552e5fa25ebbf82bacdf11.ctex"]
 
 [params]
 

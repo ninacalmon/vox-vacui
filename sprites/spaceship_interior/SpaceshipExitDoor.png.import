@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c11sdpki3rb42"
-path="res://.godot/imported/SpaceshipExitDoor.png-8545bab72636a0cc1159e5ac28d6665a.ctex"
+path="res://.godot/imported/SpaceshipExitDoor.png-d6d06e0db921a5293e8e82dae90dfbbc.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/spaceship_interior/SpaceshipExitDoor.png"
-dest_files=["res://.godot/imported/SpaceshipExitDoor.png-8545bab72636a0cc1159e5ac28d6665a.ctex"]
+dest_files=["res://.godot/imported/SpaceshipExitDoor.png-d6d06e0db921a5293e8e82dae90dfbbc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6lke2tlnjafj"
-path="res://.godot/imported/1.png-37e8eb62fa670a9e20ece0bc789be613.ctex"
+path="res://.godot/imported/1.png-26cf00d00ba7cee39dd4d5a7ca8666c0.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://sprites/ui/menu_bg/1.png"
-dest_files=["res://.godot/imported/1.png-37e8eb62fa670a9e20ece0bc789be613.ctex"]
+dest_files=["res://.godot/imported/1.png-26cf00d00ba7cee39dd4d5a7ca8666c0.ctex"]
 
 [params]
 
