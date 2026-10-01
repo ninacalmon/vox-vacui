@@ -1,0 +1,45 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://npl3mumy4crf"]
+
+[ext_resource type="FontFile" uid="uid://bkq3re32v3glf" path="res://fonts/commodore_pixelized_v1_2.ttf" id="1_cr1n0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cr1n0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5nts"]
+bg_color = Color(0.40784314, 0.72156864, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr1n0"]
+bg_color = Color(0.40784314, 0.72156864, 0.1254902, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bd2cd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6uo2n"]
+
+[resource]
+Button/colors/font_color = Color(0.69135624, 0.6913571, 0.6913565, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.6901961, 0.6901961, 0.6901961, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 19
+Button/fonts/font = ExtResource("1_cr1n0")
+Button/styles/disabled = SubResource("StyleBoxEmpty_cr1n0")
+Button/styles/focus = SubResource("StyleBoxFlat_s5nts")
+Button/styles/hover = SubResource("StyleBoxFlat_cr1n0")
+Button/styles/normal = SubResource("StyleBoxEmpty_bd2cd")
+Button/styles/pressed = SubResource("StyleBoxEmpty_6uo2n")
+RichTextLabel/constants/line_separation = 2
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/fonts/bold_font = ExtResource("1_cr1n0")
+RichTextLabel/fonts/normal_font = ExtResource("1_cr1n0")

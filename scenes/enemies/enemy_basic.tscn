@@ -1,0 +1,150 @@
+[gd_scene load_steps=24 format=3 uid="uid://br070cnq6sve"]
+
+[ext_resource type="Script" uid="uid://7afwh36bc151" path="res://scenes/enemies/enemy_basic.gd" id="1_eog5f"]
+[ext_resource type="Shader" uid="uid://diwkfayvo06cx" path="res://shaders/inflation.gdshader" id="2_ry8es"]
+[ext_resource type="Texture2D" uid="uid://3pnsx5o7lss8" path="res://sprites/enemies/alien_FuraDetrito_idle-Sheet.png" id="3_c17sm"]
+[ext_resource type="Script" uid="uid://iatwgk3de1nj" path="res://scenes/modulars/hurt_box.gd" id="3_ry8es"]
+[ext_resource type="AudioStream" uid="uid://7lu32wsorlh5" path="res://sound_effects/enemies/sfx_inimigosBasic.wav" id="4_c17sm"]
+[ext_resource type="AudioStream" uid="uid://6nqgebd8dtyr" path="res://sound_effects/enemies/sfx_inimigosBasic (2).wav" id="5_2mprn"]
+[ext_resource type="AudioStream" uid="uid://bkpogun2por27" path="res://sound_effects/enemies/sfx_enemy_attack.mp3" id="6_50j16"]
+[ext_resource type="Script" uid="uid://e5cfbq8jk5j5" path="res://scenes/enemies/enemy_visible_on_screen.gd" id="7_ldqpc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
+radius = 15.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c17sm"]
+resource_local_to_scene = true
+shader = ExtResource("2_ry8es")
+shader_parameter/inflate = 0.0
+shader_parameter/radius = 0.5
+shader_parameter/softness = 0.3
+shader_parameter/inflate_color = Color(1, 0.5, 0.5, 1)
+shader_parameter/color_strength = 1.0
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mprn"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(0, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50j16"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(40, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pthgr"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(80, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaw84"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(120, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3qc3"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(160, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odg4l"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(200, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3sl0"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(240, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16r11"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(280, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diu6i"]
+atlas = ExtResource("3_c17sm")
+region = Rect2(320, 0, 40, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5v6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mprn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50j16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pthgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaw84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3qc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odg4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3sl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16r11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diu6i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghaa6"]
+radius = 27.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pi7rj"]
+radius = 595.9144
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c5h00"]
+playback_mode = 1
+random_pitch = 2.0
+random_volume_offset_db = 4.0
+streams_count = 3
+stream_0/stream = ExtResource("4_c17sm")
+stream_1/stream = ExtResource("5_2mprn")
+stream_2/stream = ExtResource("6_50j16")
+stream_2/weight = 5.0
+
+[node name="Enemy" type="RigidBody2D" groups=["Enemy_Group"]]
+lock_rotation = true
+script = ExtResource("1_eog5f")
+speed = 160.0
+life = 3.0
+damage = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_auwsv")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_c17sm")
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_o5v6r")
+autoplay = "default"
+frame_progress = 0.50816697
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_ry8es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_ghaa6")
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_pi7rj")
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_c5h00")
+volume_db = -18.0
+bus = &"Sound Effects"
+
+[node name="EnemyVisibleOnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)
+script = ExtResource("7_ldqpc")
