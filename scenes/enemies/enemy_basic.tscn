@@ -110,7 +110,7 @@ stream_1/stream = ExtResource("5_2mprn")
 stream_2/stream = ExtResource("6_50j16")
 stream_2/weight = 5.0
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Enemy" type="RigidBody2D" groups=["Enemy_Group"]]
 lock_rotation = true
 script = ExtResource("1_eog5f")
 speed = 160.0

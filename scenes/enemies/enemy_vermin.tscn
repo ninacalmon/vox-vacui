@@ -103,9 +103,10 @@ stream_1/stream = ExtResource("5_1lrlx")
 stream_2/stream = ExtResource("6_oaun8")
 stream_2/weight = 5.0
 
-[node name="EnemyVermin" type="RigidBody2D"]
+[node name="EnemyVermin" type="RigidBody2D" groups=["Enemy_Group"]]
 collision_layer = 8
 collision_mask = 8
+can_sleep = false
 lock_rotation = true
 contact_monitor = true
 script = ExtResource("1_k0yb4")

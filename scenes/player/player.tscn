@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b512vj2a4a3y"]
+[gd_scene load_steps=36 format=3 uid="uid://b512vj2a4a3y"]
 
 [ext_resource type="Script" uid="uid://i7mc57eu0q83" path="res://scenes/player/player.gd" id="1_ktxno"]
 [ext_resource type="Texture2D" uid="uid://x6m3c8td5nfn" path="res://sprites/deimos/Deimos-Sheet.png" id="2_aqm4k"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://c6csc1ns1bw6m" path="res://sprites/deimos/ShootingDrone2.png" id="17_jincj"]
 [ext_resource type="AudioStream" uid="uid://b4cbyqk77clli" path="res://sound_effects/player/sfx_morte1.wav" id="17_ks1b7"]
 [ext_resource type="Texture2D" uid="uid://biyu4g7rbmpx0" path="res://sprites/deimos/deimos_confused_popup.png" id="21_h8ma5"]
+[ext_resource type="Script" uid="uid://bdgftmisq7y0r" path="res://scenes/ui/target_indicator.gd" id="23_jincj"]
+[ext_resource type="Script" uid="uid://dxry3jfm54yyw" path="res://scenes/player/player_targeting.gd" id="24_rqdc0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m0iey"]
 friction = 0.0
@@ -127,9 +129,9 @@ owner_collision_shape = NodePath("../CollisionShape2D")
 visible = false
 collision_layer = 2
 collision_mask = 2
+mass_to_radius_multiply = 14.0
 owner_body = NodePath("..")
 owner_collision_shape = NodePath("../CollisionShape2D")
-mass_to_radius_multiply = 14.0
 attraction_executed_multiply = 100.0
 
 [node name="Range" parent="GravitationalFieldResources" index="0"]
@@ -174,8 +176,9 @@ owner_body = NodePath("..")
 [node name="CollisionShapeResources" type="CollisionShape2D" parent="ResourceCollector"]
 shape = SubResource("CircleShape2D_tx1dd")
 
-[node name="BulletShooter" type="Node2D" parent="."]
+[node name="BulletShooter" type="Node2D" parent="." node_paths=PackedStringArray("player_targeting")]
 script = ExtResource("11_pu2lt")
+player_targeting = NodePath("../PlayerTargeting")
 
 [node name="BulletSFX" type="AudioStreamPlayer" parent="BulletShooter"]
 stream = SubResource("AudioStreamRandomizer_7g0yx")
@@ -219,5 +222,13 @@ bus = &"Sound Effects"
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1, -23)
 texture = ExtResource("21_h8ma5")
+
+[node name="TargetIndicator" type="Node2D" parent="."]
+visible = false
+script = ExtResource("23_jincj")
+
+[node name="PlayerTargeting" type="Node2D" parent="." node_paths=PackedStringArray("target_indicator")]
+script = ExtResource("24_rqdc0")
+target_indicator = NodePath("../TargetIndicator")
 
 [editable path="GravitationalFieldResources"]

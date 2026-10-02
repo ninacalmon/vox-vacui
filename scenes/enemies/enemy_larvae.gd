@@ -8,6 +8,7 @@ enum State {
 	EXPLOSION_COMMITTED,
 	EXPLOSION_DEATH,
 	EXPLODE,
+	WANDER,
 }
 
 @export var stun_time: float = 6
@@ -32,6 +33,10 @@ var state: State = State.CHASE
 var puff_timer: float = 0.0
 
 var player_inside_aggro: bool = false
+
+var wander_direction: Vector2 = Vector2.ZERO
+
+var wander_timer: float = 0.0
 
 @onready var mat: ShaderMaterial = sprite_2d.material
 
@@ -70,6 +75,11 @@ func _process(delta):
 		State.EXPLODE:
 			explode()
 
+		State.WANDER:
+			wander_timer -= delta
+			if wander_timer <= 0:
+				randomize_wander()
+
 func _integrate_forces(state_physics: PhysicsDirectBodyState2D):
 	if not is_instance_valid(player):
 		return
@@ -95,6 +105,9 @@ func _integrate_forces(state_physics: PhysicsDirectBodyState2D):
 
 		State.EXPLODE:
 			state_physics.linear_velocity = Vector2.ZERO
+
+		State.WANDER:
+			apply_movement(state_physics, wander_direction, wander_speed)
 
 	# Velocity clamp
 	var vel = state_physics.linear_velocity
@@ -125,7 +138,11 @@ func handle_deflate(delta):
 		puff_timer -= delta * deflate_speed_multiplier
 		puff_timer = max(puff_timer, 0.0)
 	else:
-		state = State.CHASE
+		if aggro_area.get_overlapping_bodies().has(player):
+			state = State.CHASE
+		else:
+			state = State.WANDER
+			randomize_wander()
 
 	update_shader()
 
@@ -204,6 +221,10 @@ func flash():
 	mat.set_shader_parameter("tint_strength", 1.0)
 	await get_tree().create_timer(0.1).timeout
 	mat.set_shader_parameter("tint_strength", 0)
+
+func randomize_wander():
+	wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	wander_timer = randf_range(1.0, 3.0)
 
 # Signals
 func _on_aggro_entered(body):
