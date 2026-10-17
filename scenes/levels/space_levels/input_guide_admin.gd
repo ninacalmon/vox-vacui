@@ -38,9 +38,13 @@ func show_movement_guides():
 	if have_teleport:
 		InputGuide.show_guide(InputGuide.ActionType.TELEPORT)
 
+
 func show_combat_guides():
 	InputGuide.show_guide(InputGuide.ActionType.AIM)
 	InputGuide.show_guide(InputGuide.ActionType.SHOOT)
+	if InputGuide.current_input_device == InputGuide.InputDevice.CONTROLLER:
+		InputGuide.show_guide(InputGuide.ActionType.TARGET_LOCK)
+
 
 func _on_enemy_entered_screen():
 	enemies_on_screen += 1

@@ -205,7 +205,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 9.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,

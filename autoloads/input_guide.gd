@@ -13,7 +13,7 @@ AIM, SHOOT,
 POINT, CLICK, UI_MOVEMENT, 
 SKIP, NEXT,
 CHANGE_ITEM, INTERACT, CHANGE_PAGE,
-FOCUS_OUT
+FOCUS_OUT, TARGET_LOCK
 }
 
 # ICONS CONTROLER
@@ -43,6 +43,9 @@ const D_PAD: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0
 
 const D_PAD_DOWN: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0037.png")
 
+const R_3_BUTTON: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0484.png")
+
+
 # ICONS KEYBOARD
 const SPACE_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0801.png")
 
@@ -67,6 +70,7 @@ const L_CLICK: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile
 const R_CLICK: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0078.png")
 
 const F_KEY: CompressedTexture2D = preload("res://sprites/ui/kenney_input/tile_0123.png")
+
 
 const INPUT_ICONS: Dictionary = {
 	ActionType.CONFIRM: {
@@ -137,6 +141,10 @@ const INPUT_ICONS: Dictionary = {
 		InputDevice.CONTROLLER: D_PAD_DOWN,
 		InputDevice.KEYBOARD: F_KEY,
 	},
+	ActionType.TARGET_LOCK : {
+		InputDevice.CONTROLLER: R_3_BUTTON,
+		InputDevice.KEYBOARD: MOUSE,
+	},
 }
 
 # TEXT
@@ -157,7 +165,8 @@ const COMMON_ACTIONS: Dictionary = {
 	ActionType.CHANGE_ITEM: "Trocar item",
 	ActionType.INTERACT: "Interagir",
 	ActionType.CHANGE_PAGE: "Trocar página",
-	ActionType.FOCUS_OUT: "Ampliar visão"
+	ActionType.FOCUS_OUT: "Ampliar visão",
+	ActionType.TARGET_LOCK: "Travar mira"
 }
 
 @export var hidden_guide_array: Array[InputGuideUnit]
