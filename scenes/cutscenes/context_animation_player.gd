@@ -1,5 +1,7 @@
 extends AnimationPlayer
 
+@export var wait_time_to_pass: float = 1.0
+
 var current_index: int = 1
 
 var waiting_for_input: bool = false
@@ -11,11 +13,14 @@ var is_playing_animation: bool = false
 func _ready() -> void:
 	Globals.next_scene_path = "res://scenes/levels/menus/menu.tscn"
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	#music.play()
+
 	play("context1")
+
 	is_playing_animation = true
 	animation_finished.connect(_on_animation_finished)
 	animation_started.connect(_on_animation_started)
+
+	wait_input()
 
 func _input(event: InputEvent) -> void:
 	if not waiting_for_input:
@@ -25,7 +30,7 @@ func _input(event: InputEvent) -> void:
 		advance_animation()
 
 func advance_animation() -> void:
-	waiting_for_input = false
+	wait_input()
 	current_index += 1
 
 	if current_index > 5:
@@ -39,6 +44,7 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	is_playing_animation = false
 	waiting_for_input = true
 
+
 func _on_animation_started(anim: String):
 	match anim:
 		"context1": music.stream = preload("res://music/cutscene_music/msc_cutscene_scene1.wav")
@@ -48,3 +54,9 @@ func _on_animation_started(anim: String):
 		"context5" : music.stream = preload("res://music/cutscene_music/msc_cutscene_scene5.mp3")
 	music.stop()
 	music.play()
+
+
+func wait_input():
+	waiting_for_input = false
+	await get_tree().create_timer(wait_time_to_pass).timeout
+	waiting_for_input = true
