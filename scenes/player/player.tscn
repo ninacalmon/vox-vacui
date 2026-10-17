@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b512vj2a4a3y"]
+[gd_scene load_steps=37 format=3 uid="uid://b512vj2a4a3y"]
 
 [ext_resource type="Script" uid="uid://i7mc57eu0q83" path="res://scenes/player/player.gd" id="1_ktxno"]
 [ext_resource type="Texture2D" uid="uid://x6m3c8td5nfn" path="res://sprites/deimos/Deimos-Sheet.png" id="2_aqm4k"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://b4cbyqk77clli" path="res://sound_effects/player/sfx_morte1.wav" id="17_ks1b7"]
 [ext_resource type="Texture2D" uid="uid://biyu4g7rbmpx0" path="res://sprites/deimos/deimos_confused_popup.png" id="21_h8ma5"]
 [ext_resource type="Script" uid="uid://bdgftmisq7y0r" path="res://scenes/ui/target_indicator.gd" id="23_jincj"]
+[ext_resource type="Texture2D" uid="uid://dny5sfb4w1y05" path="res://sprites/ui/circle.png" id="24_007i1"]
 [ext_resource type="Script" uid="uid://dxry3jfm54yyw" path="res://scenes/player/player_targeting.gd" id="24_rqdc0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m0iey"]
@@ -225,8 +226,10 @@ position = Vector2(1, -23)
 texture = ExtResource("21_h8ma5")
 
 [node name="TargetIndicator" type="Node2D" parent="."]
-visible = false
 script = ExtResource("23_jincj")
+
+[node name="TargetSprite" type="Sprite2D" parent="TargetIndicator"]
+texture = ExtResource("24_007i1")
 
 [node name="PlayerTargeting" type="Node2D" parent="." node_paths=PackedStringArray("target_indicator")]
 script = ExtResource("24_rqdc0")
