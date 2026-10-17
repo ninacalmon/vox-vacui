@@ -18,6 +18,8 @@ enum State {
 
 @export var flee_brake_speed: float = 6.0
 
+@export var wander_brake_speed: float = 10.0
+
 var state: State = State.IDLE
 
 var can_attack: bool = true
@@ -97,6 +99,8 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D):
 		
 		State.WANDER:
 			apply_movement(_state, wander_direction, wander_speed)
+			if _state.linear_velocity.length() > wander_speed:
+				_state.linear_velocity = _state.linear_velocity.move_toward(Vector2.ZERO, wander_brake_speed)
 
 	# Clamp velocity
 	if _state.linear_velocity.length() > max_velocity:

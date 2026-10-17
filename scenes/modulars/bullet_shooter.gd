@@ -3,6 +3,8 @@ extends Node2D
 
 @export var base_cooldown: float = 0.2
 
+@export var lead_strength: float = 1.0
+
 var cooldown: float = 0
 
 var aim_direction: Vector2 = Vector2.RIGHT
@@ -72,6 +74,27 @@ func handle_shoot():
 func get_input_mouse() -> Vector2:
 	return global_position.direction_to(get_global_mouse_position())
 
+func get_lead_direction(target: Enemy, bullet_speed: float) -> Vector2:
+	var muzzle_position: Vector2 = sprite_2d.global_position
+
+	# No valid bullet speed: aim straight at the target
+	if bullet_speed <= 0:
+		return muzzle_position.direction_to(target.global_position)
+
+	# Target velocity compared to the player (bullet rides with the player)
+	var player_velocity: Vector2 = StatsManager.player_current_linear_velocity
+	var relative_velocity: Vector2 = target.linear_velocity - player_velocity
+
+	# Time the bullet takes to reach the target where it is right now
+	var distance: float = muzzle_position.distance_to(target.global_position)
+	var flight_time: float = distance / bullet_speed
+
+	# Where the target will be when the bullet arrives
+	var lead_offset: Vector2 = relative_velocity * flight_time * lead_strength
+	var aim_point: Vector2 = target.global_position + lead_offset
+
+	return muzzle_position.direction_to(aim_point)
+
 func shoot(direction: Vector2):
 	if cooldown > 0:
 		return
@@ -84,8 +107,17 @@ func shoot(direction: Vector2):
 	new_bullet.show_behind_parent = true
 
 	new_bullet.global_position = sprite_2d.global_position
-	new_bullet.direction = direction
-	new_bullet.rotation = direction.angle()
+
+	var locked_target: Enemy = null
+	if is_instance_valid(player_targeting):
+		locked_target = player_targeting.current_target
+
+	var final_direction: Vector2 = direction
+	if is_instance_valid(locked_target) and not inverse_control_on:
+		final_direction = get_lead_direction(locked_target, new_bullet.speed)
+
+	new_bullet.direction = final_direction
+	new_bullet.rotation = final_direction.angle()
 
 	SFXManager.play_sound(bullet_sfx)
 

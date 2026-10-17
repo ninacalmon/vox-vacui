@@ -91,7 +91,7 @@ animations = [{
 radius = 29.068884
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pi7rj"]
-radius = 128.31601
+radius = 300.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c5h00"]
 playback_mode = 1
@@ -110,7 +110,8 @@ can_sleep = false
 lock_rotation = true
 contact_monitor = true
 script = ExtResource("1_k0yb4")
-stun_time = 2.0
+stun_time = 1.0
+flee_brake_speed = 4.8
 speed = 200.0
 life = 2.0
 damage = 6.0
